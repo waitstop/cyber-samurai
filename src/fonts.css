@@ -1,5 +1,5 @@
 @font-face {
-    font-family: 'Druk Cyr';
+    font-family: 'Druk';
     src: url('/assets/fonts/druk/DrukCyr-Bold.eot');
     src: local('/assets/fonts/druk/Druk Cyr Bold'), local('/assets/fonts/druk/DrukCyr-Bold'),
     url('/assets/fonts/druk/DrukCyr-Bold.eot?#iefix') format('embedded-opentype'),
@@ -11,7 +11,7 @@
 }
 
 @font-face {
-    font-family: 'Druk Cyr';
+    font-family: 'Druk';
     src: url('/assets/fonts/druk/DrukCyr-Heavy.eot');
     src: local('/assets/fonts/druk/Druk Cyr Heavy'), local('/assets/fonts/druk/DrukCyr-Heavy'),
     url('/assets/fonts/druk/DrukCyr-Heavy.eot?#iefix') format('embedded-opentype'),
@@ -23,7 +23,7 @@
 }
 
 @font-face {
-    font-family: 'Druk Cyr';
+    font-family: 'Druk';
     src: url('/assets/fonts/druk/DrukCyr-HeavyItalic.eot');
     src: local('/assets/fonts/druk/Druk Cyr Heavy Italic'), local('/assets/fonts/druk/DrukCyr-HeavyItalic'),
     url('/assets/fonts/druk/DrukCyr-HeavyItalic.eot?#iefix') format('embedded-opentype'),
@@ -35,7 +35,7 @@
 }
 
 @font-face {
-    font-family: 'Druk Cyr';
+    font-family: 'Druk';
     src: url('/assets/fonts/druk/DrukCyr-MediumItalic.eot');
     src: local('/assets/fonts/druk/Druk Cyr Medium Italic'), local('/assets/fonts/druk/DrukCyr-MediumItalic'),
     url('/assets/fonts/druk/DrukCyr-MediumItalic.eot?#iefix') format('embedded-opentype'),
@@ -47,7 +47,7 @@
 }
 
 @font-face {
-    font-family: 'Druk Cyr';
+    font-family: 'Druk Super';
     src: url('/assets/fonts/druk/DrukCyr-SuperItalic.eot');
     src: local('/assets/fonts/druk/Druk Cyr Super Italic'), local('/assets/fonts/druk/DrukCyr-SuperItalic'),
     url('/assets/fonts/druk/DrukCyr-SuperItalic.eot?#iefix') format('embedded-opentype'),
@@ -59,7 +59,7 @@
 }
 
 @font-face {
-    font-family: 'Druk Cyr';
+    font-family: 'Druk Super';
     src: url('/assets/fonts/druk/DrukCyr-Super.eot');
     src: local('/assets/fonts/druk/Druk Cyr Super'), local('/assets/fonts/druk/DrukCyr-Super'),
     url('/assets/fonts/druk/DrukCyr-Super.eot?#iefix') format('embedded-opentype'),
@@ -71,7 +71,7 @@
 }
 
 @font-face {
-    font-family: 'Druk Cyr';
+    font-family: 'Druk';
     src: url('/assets/fonts/druk/DrukCyr-Medium.eot');
     src: local('/assets/fonts/druk/Druk Cyr Medium'), local('/assets/fonts/druk/DrukCyr-Medium'),
     url('/assets/fonts/druk/DrukCyr-Medium.eot?#iefix') format('embedded-opentype'),
@@ -83,7 +83,7 @@
 }
 
 @font-face {
-    font-family: 'Druk Cyr';
+    font-family: 'Druk';
     src: url('/assets/fonts/druk/DrukCyr-BoldItalic.eot');
     src: local('/assets/fonts/druk/Druk Cyr Bold Italic'), local('/assets/fonts/druk/DrukCyr-BoldItalic'),
     url('/assets/fonts/druk/DrukCyr-BoldItalic.eot?#iefix') format('embedded-opentype'),
