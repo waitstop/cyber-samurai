@@ -7,6 +7,6 @@ const router = createBrowserRouter([
         path: "/",
         element: <HomePage/>,
     },
-])
+], {basename: "/cyber-samurai"})
 
 export default router

@@ -1,5 +1,6 @@
 {
   "name": "cyber-samurai",
+  "homepage": "/cyber-samurai",
   "private": true,
   "version": "0.0.0",
   "type": "module",
