@@ -6,6 +6,7 @@ import svgr from "vite-plugin-svgr"
 /// <reference types="vite-plugin-svgr/client" />
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/cyber-samurai',
   plugins: [
       react(),
       svgr()
