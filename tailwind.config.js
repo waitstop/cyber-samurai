@@ -32,8 +32,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                'druk': ['Druk', 'sans-serif'],
-                'druksuper': ['Druk Super', 'sans-serif'],
+                'druk': ['Druk Text Wide Cyr', 'sans-serif'],
             },
             container: {
                 center: true,
@@ -50,13 +49,13 @@ export default {
                     "accent": "rgba(93,44,233,1)",
                 },
                 "red": {
-                    "500": "rgba(226,57,79,1)"
+                    500: "rgba(226,57,79,1)"
                 },
                 "amber": {
                     400: "rgba(241,184,42,1)"
                 },
                 "blue": {
-                    "700": "rgba(30,81,235,1)"
+                    700: "rgba(30,81,235,1)"
                 }
             }
         },
