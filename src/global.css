@@ -3,14 +3,19 @@
 @tailwind utilities;
 
 @layer base {
-    body{
-        font-family: 'Inter', sans-serif;
-    }
-    h1, h2, h3, h4, h5, h6 {
-        font-family: 'Druk Text Wide Cyr', sans-serif;
-    }
+  body {
+    font-family: 'Inter', sans-serif;
+  }
 
-    main {
-        @apply overflow-x-hidden
-    }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Druk Text Wide Cyr', sans-serif;
+  }
+
+  main {
+    @apply overflow-x-hidden
+  }
+
+  a.button {
+    @apply py-2.5 px-4 rounded-md flex flex-row justify-center items-center gap-1
+  }
 }
