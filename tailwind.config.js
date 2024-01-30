@@ -89,14 +89,23 @@ export default {
 					transform: "scale(1,1) rotate(-5deg)",
 					opacity: 100
 				}
-			}
+			},
+            "rotate": {
+                "0%": {
+                    transform: "rotate(0deg)"
+                },
+                "100%": {
+                    transform: "rotate(360deg)"
+                }
+            }
 		},
 		animation: {
 			'moveTop': 'moveTop 0.8s ease-in-out',
 			'moveBottom': 'moveBottom 0.8s ease-in-out',
 			'moveLeft': 'moveLeft 0.8s ease-in-out',
 			'moveRight': 'moveRight 0.8s ease-in-out',
-			'logoStamp': 'logoStamp 200ms ease-in'
+			'logoStamp': 'logoStamp 200ms ease-in',
+            'rotate': 'rotate 5s linear infinite'
 		}
 	}
 }
