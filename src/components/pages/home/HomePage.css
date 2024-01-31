@@ -1,3 +1,17 @@
+@tailwind base;
+
+
 section.roadmap .swiper-slide {
   width: fit-content;
+}
+
+@layer base {
+  section.clients > div {
+    & div:has(> img):hover{
+      @apply bg-purple-500
+    }
+    & div:has(> img) {
+      @apply bg-zinc-800 rounded-xl flex justify-center items-center p-4 w-full
+    }
+  }
 }
