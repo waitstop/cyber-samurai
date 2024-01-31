@@ -8,6 +8,7 @@ export default {
 		"./src/**/*.{js,ts,jsx,tsx}",
 	],
 	plugins: [
+        "prettier-plugin-tailwindcss",
 		plugin(function ({matchUtilities, theme}) {
 			matchUtilities(
 				{
@@ -52,6 +53,9 @@ export default {
 				"red": {
 					500: "rgba(226,57,79,1)"
 				},
+                "green": {
+                    700: "rgba(16,136,5,1)"
+                },
 				"amber": {
 					400: "rgba(241,184,42,1)"
 				},
