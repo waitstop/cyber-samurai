@@ -13,9 +13,10 @@ import {EffectCards, Controller} from "swiper/modules"
 
 
 type Props = {
-  items: CaseType[]
+  items: CaseType[],
+  navigation?: boolean
 }
-const StackCarousel = ({items}: Props) => {
+const CasesCarousel = ({items, navigation = false}: Props) => {
   const [accordionState, setAccordionState] = useState<string>("")
   const [swiperApi, setSwiperApi] = useState<SwiperType | null>(null)
 
@@ -28,8 +29,14 @@ const StackCarousel = ({items}: Props) => {
 
   return (
     <div className={"relative"}>
-      <ArrowLeftIcon style={{filter: "drop-shadow(3px 3px 2px rgba(0,0,0,.7))"}} className={"absolute -translate-y-1/2 top-32 -left-2 z-[3]"} onClick={prev}>next</ArrowLeftIcon>
-      <ArrowRightIcon style={{filter: "drop-shadow(3px 3px 2px rgba(0,0,0,.7))"}} className={"absolute -translate-y-1/2 top-32 -right-2 z-[3]"} onClick={next}>prev</ArrowRightIcon>
+      {navigation && <>
+        <ArrowLeftIcon style={{filter: "drop-shadow(3px 3px 2px rgba(0,0,0,.7))"}}
+                       className={"absolute -translate-y-1/2 top-32 -left-2 z-[3]"}
+                       onClick={prev}>next</ArrowLeftIcon>
+        <ArrowRightIcon style={{filter: "drop-shadow(3px 3px 2px rgba(0,0,0,.7))"}}
+                        className={"absolute -translate-y-1/2 top-32 -right-2 z-[3]"}
+                        onClick={next}>prev</ArrowRightIcon>
+      </>}
       <Swiper
         onSlideChange={() => {
           setAccordionState("")
@@ -81,4 +88,4 @@ const StackCarousel = ({items}: Props) => {
   );
 };
 
-export default StackCarousel;
+export default CasesCarousel;

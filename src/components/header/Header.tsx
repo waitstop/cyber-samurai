@@ -1,19 +1,24 @@
-import LogoIcon from "@icons/logo.svg?react"
-import BurgerIcon from "@icons/burger.svg?react"
-import {Link} from "react-router-dom";
-
+import LogoIcon from "@icons/logo.svg?react";
+import BurgerIcon from "@icons/burger.svg?react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-    function handleMenuClick() {
-        return
-    }
+  function handleMenuClick() {
+    return;
+  }
 
-    return (
-        <header className={"flex justify-between items-center container pb-2.5 pt-12"}>
-            <Link to={"/"}><LogoIcon/></Link>
-            <BurgerIcon onClick={handleMenuClick}/>
-        </header>
-    );
+  return (
+    <header
+      className={
+        "container flex items-center justify-between bg-violet-accent p-2.5"
+      }
+    >
+      <Link to={"/"}>
+        <LogoIcon />
+      </Link>
+      <BurgerIcon onClick={handleMenuClick} />
+    </header>
+  );
 };
 
 export default Header;
