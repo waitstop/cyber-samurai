@@ -10,6 +10,7 @@ export default defineConfig({
 		react(),
 		svgr()
 	],
+  base: "./",
 	resolve: {
 		alias: [
 			{find: '@components', replacement: path.resolve(__dirname, './src/components')},
