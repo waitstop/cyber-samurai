@@ -1,13 +1,14 @@
 {
   "name": "cyber-samurai",
   "private": true,
+  "homepage": "https://waitstop.github.io/cyber-samurai",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite --base=/",
     "zip": "zip -r dist.zip ./dist",
     "build": "tsc && vite build",
-    "gh-build": "tsc && vite build --mode gh-pages --base=/cyber-samurai/",
+    "gh-build": "tsc && vite build --mode gh-pages",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "preinstall": "npx only-allow pnpm",
