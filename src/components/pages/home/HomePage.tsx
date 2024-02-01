@@ -244,7 +244,7 @@ const HomePage = () => {
         <div className={"container mt-10"}>
           <img
             className={"h-auto w-full"}
-            src="/images/roadmap_bg.png"
+            src="images/roadmap_bg.png"
             alt="roadmap"
           />
           <Link className={"button mt-10 w-fit bg-purple-500"} to={"/roadmap"}>
@@ -315,21 +315,21 @@ const HomePage = () => {
           <div className={"aspect-square basis-[30%]"}>
             <img
               className={"hover:bg-purple-500"}
-              src="/images/clients/rmg_logo.svg"
+              src="images/clients/rmg_logo.svg"
               alt=""
             />
           </div>
           <div className={"basis-[20%]"}>
             <img
               className={"hover:bg-purple-500"}
-              src="/images/clients/monte_carlo.svg"
+              src="images/clients/monte_carlo.svg"
               alt=""
             />
           </div>
           <div className={"basis-1/2"}>
             <img
               className={"hover:bg-purple-500"}
-              src="/images/clients/hit_logo.svg"
+              src="images/clients/hit_logo.svg"
               alt=""
             />
           </div>
@@ -339,7 +339,7 @@ const HomePage = () => {
           <div className={"aspect-square basis-2/5"}>
             <img
               className={"hover:bg-purple-500"}
-              src="/images/clients/dfm_logo.svg"
+              src="images/clients/dfm_logo.svg"
               alt=""
             />
           </div>
@@ -347,14 +347,14 @@ const HomePage = () => {
             <div className={"h-full"}>
               <img
                 className={"hover:bg-purple-500"}
-                src="/images/clients/mult_logo.svg"
+                src="images/clients/mult_logo.svg"
                 alt=""
               />
             </div>
             <div className={"h-full"}>
               <img
                 className={"hover:bg-purple-500"}
-                src="/images/clients/station_logo.svg"
+                src="images/clients/station_logo.svg"
                 alt=""
               />
             </div>
@@ -365,14 +365,14 @@ const HomePage = () => {
           <div className={"basis-2/4"}>
             <img
               className={"hover:bg-purple-500"}
-              src="/images/clients/maximum_logo.svg"
+              src="images/clients/maximum_logo.svg"
               alt=""
             />
           </div>
           <div className={"basis-1/4"}>
             <img
               className={"hover:bg-purple-500"}
-              src="/images/clients/ct_logo.svg"
+              src="images/clients/ct_logo.svg"
               alt=""
             />
           </div>
@@ -380,14 +380,14 @@ const HomePage = () => {
             <div>
               <img
                 className={"hover:bg-purple-500"}
-                src="/images/clients/nst_logo.svg"
+                src="images/clients/nst_logo.svg"
                 alt=""
               />
             </div>
             <div>
               <img
                 className={"hover:bg-purple-500"}
-                src="/images/clients/domvet_logo.svg"
+                src="images/clients/domvet_logo.svg"
                 alt=""
               />
             </div>

@@ -49,7 +49,7 @@ const CasesCarousel = ({items, navigation = false}: Props) => {
         {items.map((caseItem, i) => (
           <SwiperSlide key={"caseItem" + i}>
             <div className={"rounded-lg bg-zinc-800 overflow-hidden"}>
-              <img className={"w-full h-40 object-cover object-top"} src={new URL(caseItem.img, import.meta.url).href}
+              <img className={"w-full h-40 object-cover object-top"} src={caseItem.img}
                    alt=""/>
               <Accordion value={accordionState} onValueChange={v => setAccordionState(v)} collapsible type={"single"}
                          className={"p-4 pb-6"}>

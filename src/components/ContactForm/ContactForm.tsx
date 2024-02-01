@@ -101,7 +101,7 @@ const ContactForm = () => {
         </p>
         <img
           className={"absolute -bottom-10 -right-14 w-48"}
-          src="/images/maskot_1.png"
+          src="images/maskot_1.png"
           alt="maskot"
         />
       </form>

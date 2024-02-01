@@ -11,7 +11,7 @@ export type CaseType = {
 export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   {
     type: "site",
-    img: "/images/cases/promeal.png",
+    img: "images/cases/promeal.png",
     tag: "#лендинги",
     title: "Promeal",
     description: "Максимальная информативность лендинга, для детального и упрощённого ознакомления с продуктом ProMeal.\n" +
@@ -21,7 +21,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/ecotofu.png",
+    img: "images/cases/ecotofu.png",
     tag: "#лендинги",
     title: "ECOTOFU",
     description: "Максимальная информативность лендинга, для детального и упрощённого ознакомления с продуктом EcoTofu.\n" +
@@ -31,7 +31,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/lamborgini.png",
+    img: "images/cases/lamborgini.png",
     tag: "#лендинги",
     title: "ЛАМБОРГИНИ",
     description: "Создание лендинга в преддверии выхода в прокат фильма «Ламборгини». Отслеживание конверсии по продажам билетов.",
@@ -40,7 +40,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/slejka.png",
+    img: "images/cases/slejka.png",
     tag: "#лендинги",
     title: "СЛЕЖКА",
     description: "Создание лендинга в преддверии выхода в прокат фильма «Слежка». Отслеживание конверсии по продажам билетов.",
@@ -49,7 +49,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/naruble.png",
+    img: "images/cases/naruble.png",
     tag: "#лендинги",
     title: "НА РУБЛЕ БЕЗ ₽УБЛЯ",
     description: "Создание лендинга в преддверии выхода в прокат фильма «На Рубле без рубля». Отслеживание конверсии по продажам билетов. Размещение информации о фильме, установка виджета с преображениями главных героинь.",
@@ -58,7 +58,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/winnie.png",
+    img: "images/cases/winnie.png",
     tag: "#лендинги",
     title: "ВИННИ-ПУХ: КРОВЬ И МЁД",
     description: "Создание лендинга в преддверии выхода в прокат фильма «Винни-Пух: Кровь и мёд». Отслеживание конверсии по продажам билетов.",
@@ -67,7 +67,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/parovoz.png",
+    img: "images/cases/parovoz.png",
     tag: "#лендинги",
     title: "СПЕКТАКЛЬ «АРКАДИЙ ПАРОВОЗОВ»",
     description: "Разработка информативного лендинга по заказу ЛенТеатр. Рассказать о детском интегративном спектакле «Аркадий Паровозов» по мотивам мультсериала.",
@@ -76,7 +76,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/carnaval.png",
+    img: "images/cases/carnaval.png",
     tag: "#лендинги",
     title: "СПЕКТАКЛЬ «КАРНАВАЛЬНАЯ НОЧЬ»",
     description: "Разработка информативного лендинга по заказу ЛенТеатр. Рассказать о спектакле «Карнавальная ночь» по мотивам культового фильма",
@@ -85,7 +85,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/mult.png",
+    img: "images/cases/mult.png",
     tag: "#лендинги",
     title: "МУЛЬТ В КИНО",
     description: "Разработка информативного лендинга для пользователей. Рассказать о новом формате показа мультфильмов в кинотеатрах, которые выходят за рамки киноэкрана и вовлекают зрителей в интерактивное приключение!",
@@ -94,7 +94,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/istochnik.png",
+    img: "images/cases/istochnik.png",
     tag: "#корпоративный сайт",
     title: "ИСТОЧНИК",
     description: "Разработка сайта по заказу ДОКАДОГ медиа для шоу «Источник», в котором ведущие рассказывают по-настоящему вдохновляющие истории героев, которые маленькими шагами меняют весь мир.",
@@ -103,7 +103,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/horror_fest.png",
+    img: "images/cases/horror_fest.png",
     tag: "#корпоративный сайт",
     title: "КИНОФЕСТИВАЛЬ: ХОРРОР ФЕСТ",
     description: "Разработка сайта для фестиваля Хоррор фест по заказу ЦТВ. Реализация продаж билетов на премьеры во всех городах фестиваля.",
@@ -112,7 +112,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/okno.png",
+    img: "images/cases/okno.png",
     tag: "#корпоративный сайт",
     title: "КИНОФЕСТИВАЛЬ: ОКНО В ЕВРОПУ/ВЫБОРГ 2023",
     description: "Разработка сайта для навигации по фестивалю Окно в Европу/Выборг 2023.",
@@ -121,7 +121,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/zoloto.png",
+    img: "images/cases/zoloto.png",
     tag: "#корпоративный сайт",
     title: "МОСФИЛЬМ ЗОЛОТАЯ КОЛЛЕКЦИЯ",
     description: "Разработка сайта для телеканала Мосфильм Золотая коллекция по заказу ЦТВ.",
@@ -130,7 +130,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/filmpro.png",
+    img: "images/cases/filmpro.png",
     tag: "#корпоративный сайт",
     title: "ФИЛЬМ ПРО",
     description: "Редизайн и обновление функционального наполнения сайта посвященного кинотематике, по заказу ВГТРК",
@@ -139,7 +139,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/istina.png",
+    img: "images/cases/istina.png",
     tag: "#онлайн-магазины",
     title: "Онлайн-магазин одежды «Истина»",
     description: "Разработка сайта с каталогом женской одежды бренда ISTINA. Сайт с функционалом обработки онлайн-заказов, оплата, доставка.",
@@ -148,7 +148,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/ethnosiberian.png",
+    img: "images/cases/ethnosiberian.png",
     tag: "#онлайн-магазины",
     title: "ETHNOSIBERIAN",
     description: "Разработка сайта в рамках выхода на рынок нового бренда уходовой косметики EthnoSiberian. Сайт с функционалом каталога и возможностью добавления/удаления позиций и ссылками на места продаж.",
@@ -157,7 +157,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/mvk.png",
+    img: "images/cases/mvk.png",
     tag: "#онлайн-магазины",
     title: "МВК",
     description: "Разработка лендинга для кинопрокатной компании «МВК». Максимальная информативность лендинга, для детального и упрощенного ознакомления с проектами кинопроката. Привлечение потенциальных клиентов из кинорынка.",
@@ -166,7 +166,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/moloko.png",
+    img: "images/cases/moloko.png",
     tag: "#онлайн-магазины",
     title: "НАЛЬЧИНСКИЙ МОЛОЧНЫЙ КОМБИНАТ",
     description: "Разработка сайта с каталогом продукции Нальчинского молочного комбината (НМК). Сайт с функционалом управления каталогом, работой с разделами: новости, партнёрам, рецепты.",
@@ -175,7 +175,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/sprezzatura.png",
+    img: "images/cases/sprezzatura.png",
     tag: "#онлайн-магазины",
     title: "SPREZZATURA",
     description: "Разработка интернет-магазина для нового бренда мужской итальянской одежды Sprezzatura. Сайт с функционалом обработки онлайн-заказов, оплата, доставка.",
@@ -184,7 +184,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/bambini.png",
+    img: "images/cases/bambini.png",
     tag: "#онлайн-магазины",
     title: "BAMBINI FURNITURE",
     description: "Разработка сайта с каталогом продукции премиальной мягкой мебели Bambini Furniture. Функционал управления каталогом, заказ через форму обратной связи.",
@@ -193,7 +193,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/latrica.png",
+    img: "images/cases/latrica.png",
     tag: "#онлайн-магазины",
     title: "LATRIKA",
     description: "Доработка функционального содержимого интернет-магазина женской одежды LaTrika.",
@@ -202,7 +202,7 @@ export const cases: ({ type: "site" | "bot" | "seo" | "app" } & CaseType)[] = [
   },
   {
     type: "site",
-    img: "/images/cases/ecotex.png",
+    img: "images/cases/ecotex.png",
     tag: "#онлайн-магазины",
     title: "ЭКОТЕКС",
     description: "Доработка функционального содержимого интернет-магазина женской одежды LaTrika.",
