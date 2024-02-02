@@ -9,11 +9,9 @@ type Props = {
 const MainLayout = ({ className, children }: Props) => {
   return (
     <>
-      <main className={className}>
-        <Header />
-        {children}
-        <Footer />
-      </main>
+      <Header />
+      <main className={className}>{children}</main>
+      <Footer />
     </>
   );
 };

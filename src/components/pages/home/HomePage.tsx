@@ -1,4 +1,3 @@
-import { Button } from "@components/ui/button.tsx";
 import LogoIcon from "@icons/logo.svg?react";
 import HomePageHeroText from "@pages/home/HomePage.HeroText.tsx";
 import {
@@ -22,6 +21,7 @@ import ContactForm from "@components/ContactForm/ContactForm.tsx";
 import { PainSolutions } from "@pages/home/PainSolutions.ts";
 import { BanIcon, CheckIcon } from "lucide-react";
 import MainLayout from "@components/layouts/MainLayout.tsx";
+import { animated as a, useSpring } from "@react-spring/web";
 
 const marqueeTexts = [
   { text: "#лендинг" },
@@ -32,13 +32,28 @@ const marqueeTexts = [
 ];
 
 const HomePage = () => {
+  const [props] = useSpring(
+    () => ({
+      from: { offset: -1500 },
+      to: { offset: 0 },
+      config: {
+        friction: 80,
+      },
+    }),
+    [],
+  );
   return (
     <MainLayout className={"bg-violet-accent text-white"}>
       {/*Hero page*/}
       <section className={"container pb-16"}>
         <HomePageHeroText />
         <div className={"relative mx-auto w-fit"}>
-          <Button className={"relative z-10 mt-10 bg-black"}>Хочу сайт!</Button>
+          <a
+            href={"#contact"}
+            className={"button relative z-10 mt-10 bg-black"}
+          >
+            Хочу сайт!
+          </a>
           <LogoIcon
             style={{ animationFillMode: "both" }}
             className={
@@ -64,21 +79,23 @@ const HomePage = () => {
                 value={"site"}
               >
                 Сайт
-                <svg
+                <a.svg
                   className={
-                    "pointer-events-none absolute -left-4 bottom-0 hidden -translate-y-1/4 translate-x-1/4 group-data-[state=active]:block"
+                    "pointer-events-none absolute -left-6 bottom-4 z-50 hidden w-64 translate-x-1/4 stroke-violet-700 stroke-[5px] group-data-[state=active]:block"
                   }
+                  style={{
+                    strokeDashoffset: props.offset,
+                    strokeDasharray: 2000,
+                  }}
                   width="247"
                   height="95"
-                  viewBox="0 0 247 95"
+                  viewBox="0 0 677.53 197.53"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
-                  <path
-                    d="M189.973 28.5945C190.507 28.7347 191.054 28.4154 191.194 27.8812C191.335 27.347 191.015 26.8003 190.481 26.66L189.973 28.5945ZM83.7748 27.6273L82.8428 27.2649L83.7748 27.6273ZM242.815 36.3262L242.149 37.0726L242.815 36.3262ZM0.225494 87.3673C-0.123863 87.7951 -0.0603147 88.4251 0.367433 88.7744L7.33798 94.4675C7.76573 94.8169 8.3957 94.7533 8.74506 94.3256C9.09441 93.8978 9.03087 93.2679 8.60312 92.9185L2.40707 87.858L7.46761 81.6619C7.81697 81.2342 7.75342 80.6042 7.32567 80.2549C6.89792 79.9055 6.26795 79.969 5.9186 80.3968L0.225494 87.3673ZM190.481 26.66C177.037 23.1313 152.771 16.8946 130.641 14.6599C119.583 13.5432 108.982 13.4169 100.503 15.1645C92.0452 16.9076 85.4437 20.576 82.8428 27.2649L84.7068 27.9897C86.9405 22.2452 92.7006 18.8145 100.907 17.1233C109.091 15.4365 119.456 15.5406 130.44 16.6497C152.395 18.8667 176.52 25.0633 189.973 28.5945L190.481 26.66ZM82.8428 27.2649C81.9489 29.5638 81.958 31.7736 82.8005 33.8407C83.6313 35.8791 85.2383 37.6975 87.3987 39.3212C91.7057 42.5582 98.4611 45.2059 106.696 47.3359C123.203 51.6053 146.088 53.9004 168.487 54.4071C190.886 54.9137 212.897 53.6341 227.659 50.7125C234.992 49.2615 240.723 47.3727 243.772 44.9688C245.317 43.7511 246.335 42.2699 246.307 40.5199C246.28 38.8005 245.244 37.1525 243.48 35.5799L242.149 37.0726C243.739 38.4902 244.293 39.6503 244.308 40.5517C244.321 41.4225 243.832 42.3748 242.534 43.3982C239.897 45.4765 234.6 47.3001 227.271 48.7506C212.71 51.6323 190.861 52.9127 168.532 52.4076C146.204 51.9025 123.491 49.6141 107.197 45.3997C99.0323 43.2878 92.5868 40.7185 88.6003 37.7224C86.614 36.2295 85.3012 34.6773 84.6526 33.0859C84.0157 31.5232 83.9858 29.844 84.7068 27.9897L82.8428 27.2649ZM243.48 35.5799C216.082 11.1472 194.473 1.27735 175.572 0.610676C156.662 -0.0563298 140.693 8.49972 124.628 20.3435C92.4108 44.0945 59.6052 81.083 0.899634 87.005L1.10037 88.9949C60.5193 83.001 93.9775 45.4243 125.815 21.9533C141.776 10.186 157.283 1.96684 175.502 2.60943C193.729 3.25236 214.904 12.777 242.149 37.0726L243.48 35.5799Z"
-                    fill="#5D2CE9"
-                  />
-                </svg>
+                  <path d="m2.5,173.64s107.48,16.17,240-40.17C375.02,77.12,435.02,1.47,527.37,2.51s148.17,64.17,147.65,78.78c-.52,14.61-37.57,33.1-174.26,29.22-128.61-3.65-180.61-26.7-165.39-61.04,23.58-53.22,222.26,5.22,222.26,5.22" />
+                  <polyline points="24.5 154.14 2.5 173.64 23.37 195.03" />
+                </a.svg>
               </TabsTrigger>
               <TabsTrigger
                 disabled={
@@ -254,7 +271,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className={"bg-zinc-800 pt-10"}>
+      <section className={"bg-zinc-800 pt-10"} id={"contact"}>
         <div className={"container"}>
           <ContactForm />
         </div>
