@@ -12,6 +12,7 @@ import ArrowLeftIcon from "@icons/arrow_left.svg?react";
 import ArrowRightIcon from "@icons/arrow_right.svg?react";
 import "swiper/css";
 import "swiper/css/effect-cards";
+import "./CasesCarousel.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import { EffectCards, Controller } from "swiper/modules";
