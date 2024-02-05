@@ -9,7 +9,10 @@ import {
 import Marquee from "react-fast-marquee";
 import { cn } from "@/lib/utils.ts";
 import { cases } from "./Cases.ts";
-import CasesCarousel from "@components/CasesCarousel/CasesCarousel.tsx";
+import {
+  CasesCarouselDesktop,
+  CasesCarouselMobile,
+} from "@components/CasesCarousel/CasesCarousel.tsx";
 import { Link } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -50,26 +53,32 @@ const HomePage = () => {
         <div className={"relative mx-auto w-fit"}>
           <a
             href={"#contact"}
-            className={"button relative z-10 mt-10 bg-black"}
+            className={"button relative z-10 mt-10 bg-black lg:text-xl"}
           >
             Хочу сайт!
           </a>
           <LogoIcon
             style={{ animationFillMode: "both" }}
             className={
-              "absolute left-4 top-2 h-auto w-48 -translate-y-1/2 animate-logoStamp fill-none stroke-white stroke-[0.5px] animate-delay-[3s]"
+              "absolute left-4 top-2 h-auto w-48 -translate-y-1/2 animate-logoStamp fill-none stroke-white stroke-[0.5px] animate-delay-[3s] lg:left-[100px] lg:top-[-100px] lg:w-[400px]"
             }
           />
         </div>
       </section>
       {/* Cases */}
       <section className={"bg-zinc-800 pt-10"}>
-        <h1 className={"container text-center text-xl font-bold uppercase"}>
+        <h1
+          className={
+            "container text-center text-xl font-bold uppercase lg:text-4xl"
+          }
+        >
           Что мы умеем
         </h1>
         <Tabs defaultValue={"site"}>
           <div className={"container w-fit"}>
-            <TabsList className={"py-10"}>
+            <TabsList
+              className={"py-10 lg:[&>button]:px-5 lg:[&>button]:text-xl"}
+            >
               <TabsTrigger
                 disabled={
                   cases.filter((casesItem) => casesItem.type === "site")
@@ -187,8 +196,12 @@ const HomePage = () => {
           <div className={"bg-black"}>
             <div className={"container py-8"}>
               <TabsContent className={"m-0 h-auto"} value={"site"}>
-                <CasesCarousel
+                <CasesCarouselMobile
                   navigation
+                  className={"lg:hidden"}
+                  items={cases.filter((caseItem) => caseItem.type === "site")}
+                />
+                <CasesCarouselDesktop
                   items={cases.filter((caseItem) => caseItem.type === "site")}
                 />
               </TabsContent>

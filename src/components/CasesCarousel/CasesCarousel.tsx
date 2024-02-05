@@ -6,7 +6,7 @@ import {
 } from "@components/ui/accordion.tsx";
 import punycode from "punycode";
 import LinkIcon from "@icons/link.svg?react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CaseType } from "@pages/home/Cases.ts";
 import ArrowLeftIcon from "@icons/arrow_left.svg?react";
 import ArrowRightIcon from "@icons/arrow_right.svg?react";
@@ -16,12 +16,20 @@ import "./CasesCarousel.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import type { Swiper as SwiperType } from "swiper";
 import { EffectCards, Controller } from "swiper/modules";
+import { cn } from "@/lib/utils.ts";
+import { Button } from "@components/ui/button.tsx";
+import { useSpring, animated as a } from "@react-spring/web";
 
 type Props = {
   items: CaseType[];
   navigation?: boolean;
+  className?: string;
 };
-const CasesCarousel = ({ items, navigation = false }: Props) => {
+const CasesCarouselMobile = ({
+  items,
+  navigation = false,
+  className,
+}: Props) => {
   const [accordionState, setAccordionState] = useState<string>("");
   const [swiperApi, setSwiperApi] = useState<SwiperType | null>(null);
 
@@ -34,7 +42,7 @@ const CasesCarousel = ({ items, navigation = false }: Props) => {
   }
 
   return (
-    <div className={"relative mx-auto w-full max-w-[400px]"}>
+    <div className={cn(["relative mx-auto w-full max-w-[400px]", className])}>
       {navigation && (
         <>
           <ArrowLeftIcon
@@ -128,4 +136,105 @@ const CasesCarousel = ({ items, navigation = false }: Props) => {
   );
 };
 
-export default CasesCarousel;
+const CasesCarouselDesktop = (props: Omit<Props, "navigation">) => {
+  const [currentItemIndex, setCurrentItemIndex] = useState<number>(0);
+  const [currentItem, setCurrentItem] = useState<CaseType>(props.items[0]);
+  const [imgProps, imgApi] = useSpring(
+    () => ({
+      from: {
+        backgroundPosition: "50% 0%",
+      },
+      to: {
+        backgroundPosition: "50% 100%",
+      },
+      config: {
+        mass: 3000,
+        friction: 200,
+        clamp: true,
+      },
+    }),
+    [currentItem, currentItemIndex],
+  );
+
+  function next() {
+    if (currentItemIndex < props.items.length - 1) {
+      setCurrentItemIndex((prevState) => prevState + 1);
+      imgApi.start({
+        from: {
+          backgroundPosition: "50% 0%",
+        },
+        to: {
+          backgroundPosition: "50% 100%",
+        },
+        config: {
+          mass: 1,
+          friction: 3000,
+          clamp: true,
+        },
+      });
+    }
+    if (currentItemIndex === props.items.length - 1) {
+      setCurrentItemIndex(0);
+    }
+  }
+
+  useEffect(() => {
+    setCurrentItem(props.items[currentItemIndex]);
+  }, [currentItemIndex, props.items]);
+
+  return (
+    <div className={cn([props.className, "container"])}>
+      <div className={"grid grid-cols-2 grid-rows-1 gap-x-5"}>
+        <a.div
+          style={{ backgroundImage: `url(${currentItem.img})`, ...imgProps }}
+          className={"w-full rounded-2xl bg-cover"}
+        />
+        <div className={"prose-h2:text-3xl flex flex-col gap-y-5"}>
+          <div className={"h-full rounded-2xl bg-zinc-800 p-10"}>
+            <span>{currentItem.tag}</span>
+            <h1
+              className={
+                "mb-2 font-druk text-3xl font-bold uppercase text-purple-500"
+              }
+            >
+              {currentItem.title}
+            </h1>
+            <h2 className={"my-2`"}>Наши задачи</h2>
+            <p>{currentItem.description}</p>
+            <h2 className={"my-2"}>Что мы сделали</h2>
+            <ul>
+              {currentItem.tasks.map((task, i) => (
+                <li
+                  key={"task" + i}
+                  className={
+                    "flex items-start justify-start gap-x-2 before:mt-2.5 before:block before:aspect-square before:h-1 before:w-1 before:rounded-full before:bg-purple-500"
+                  }
+                >
+                  {task}
+                </li>
+              ))}
+            </ul>
+            <a
+              className={"button mt-4 w-fit bg-purple-500"}
+              href={currentItem.link}
+              target={"_blank"}
+            >
+              <LinkIcon className={"inline"} />
+              <span className={"truncate font-druk text-xs uppercase"}>
+                {punycode.toUnicode(new URL(currentItem.link).host)}
+              </span>
+            </a>
+          </div>
+          <Button
+            onClick={next}
+            className={"rounded-2xl py-10 font-druk text-xl uppercase"}
+          >
+            Следующий кейс
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { CasesCarouselMobile, CasesCarouselDesktop };
