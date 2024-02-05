@@ -25,7 +25,10 @@ export default {
                 { values: theme("transitionDelay") },
             );
         }),
+        // eslint-disable-next-line no-undef
         require("tailwindcss-animate"),
+        // eslint-disable-next-line no-undef
+        require("@tailwindcss/typography"),
     ],
     theme: {
         extend: {
