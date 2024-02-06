@@ -18,7 +18,7 @@ import type { Swiper as SwiperType } from "swiper";
 import { EffectCards, Controller } from "swiper/modules";
 import { cn } from "@/lib/utils.ts";
 import { Button } from "@components/ui/button.tsx";
-import { useSpring, animated as a } from "@react-spring/web";
+import { useSpring, animated as a, useTransition } from "@react-spring/web";
 
 type Props = {
   items: CaseType[];
@@ -65,7 +65,7 @@ const CasesCarouselMobile = ({
         onSlideChange={() => {
           setAccordionState("");
         }}
-        className={"mx-auto w-full"}
+        className={"cases-swiper mx-auto w-full"}
         modules={[EffectCards, Controller]}
         controller={{ control: swiperApi }}
         rewind
@@ -155,6 +155,12 @@ const CasesCarouselDesktop = (props: Omit<Props, "navigation">) => {
     }),
     [currentItem, currentItemIndex],
   );
+  const transitions = useTransition(currentItem, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+    exitBeforeEnter: true,
+  });
 
   function next() {
     if (currentItemIndex < props.items.length - 1) {
@@ -189,41 +195,59 @@ const CasesCarouselDesktop = (props: Omit<Props, "navigation">) => {
           style={{ backgroundImage: `url(${currentItem.img})`, ...imgProps }}
           className={"w-full rounded-2xl bg-cover"}
         />
-        <div className={"prose-h2:text-3xl flex flex-col gap-y-5"}>
+        <div
+          className={
+            "flex flex-col gap-y-5 prose-h2:text-3xl prose-p:text-blue-200"
+          }
+        >
           <div className={"h-full rounded-2xl bg-zinc-800 p-10"}>
-            <span>{currentItem.tag}</span>
-            <h1
-              className={
-                "mb-2 font-druk text-3xl font-bold uppercase text-purple-500"
-              }
-            >
-              {currentItem.title}
-            </h1>
-            <h2 className={"my-2`"}>Наши задачи</h2>
-            <p>{currentItem.description}</p>
-            <h2 className={"my-2"}>Что мы сделали</h2>
-            <ul>
-              {currentItem.tasks.map((task, i) => (
-                <li
-                  key={"task" + i}
+            {transitions((props, item) => (
+              <>
+                <a.span style={props}>{currentItem.tag}</a.span>
+                <a.h1
+                  style={props}
                   className={
-                    "flex items-start justify-start gap-x-2 before:mt-2.5 before:block before:aspect-square before:h-1 before:w-1 before:rounded-full before:bg-purple-500"
+                    "mb-2 font-druk text-3xl font-bold uppercase text-purple-500"
                   }
                 >
-                  {task}
-                </li>
-              ))}
-            </ul>
-            <a
-              className={"button mt-4 w-fit bg-purple-500"}
-              href={currentItem.link}
-              target={"_blank"}
-            >
-              <LinkIcon className={"inline"} />
-              <span className={"truncate font-druk text-xs uppercase"}>
-                {punycode.toUnicode(new URL(currentItem.link).host)}
-              </span>
-            </a>
+                  {item.title}
+                </a.h1>
+                <a.h2 style={props} className={"my-2`"}>
+                  Наши задачи
+                </a.h2>
+                <a.p style={props}>{currentItem.description}</a.p>
+                <a.h2 style={props} className={"my-2"}>
+                  Что мы сделали
+                </a.h2>
+              </>
+            ))}
+            {transitions((props) => (
+              <a.ul style={props}>
+                {currentItem.tasks.map((task, i) => (
+                  <li
+                    key={currentItem.title + "_task_" + i}
+                    className={
+                      "flex items-start justify-start gap-x-2 before:mt-2.5 before:block before:aspect-square before:h-1 before:w-1 before:rounded-full before:bg-purple-500"
+                    }
+                  >
+                    <p>{task}</p>
+                  </li>
+                ))}
+              </a.ul>
+            ))}
+            {transitions((props) => (
+              <a.a
+                style={props}
+                className={"button mt-4 w-fit bg-purple-500"}
+                href={currentItem.link}
+                target={"_blank"}
+              >
+                <LinkIcon className={"inline"} />
+                <span className={"truncate font-druk text-xs uppercase"}>
+                  {punycode.toUnicode(new URL(currentItem.link).host)}
+                </span>
+              </a.a>
+            ))}
           </div>
           <Button
             onClick={next}

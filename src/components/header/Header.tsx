@@ -20,6 +20,7 @@ const Header = () => {
       className: "button w-fit bg-white text-zinc-800",
     },
   ];
+
   return (
     <header className={"sticky top-0 z-50 bg-violet-accent p-2.5"}>
       <div className={"container flex items-center justify-between"}>

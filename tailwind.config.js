@@ -41,6 +41,7 @@ export default {
                 screens: {
                     DEFAULT: "100%",
                     lg: "1320px",
+                    md: "960px",
                 },
                 padding: {
                     DEFAULT: "1.25rem",
