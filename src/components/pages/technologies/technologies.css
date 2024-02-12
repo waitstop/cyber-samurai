@@ -1,0 +1,33 @@
+.stack-grid {
+  display: grid;
+  grid-template-columns: 1fr .5fr 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0.75rem;
+  grid-row-gap: 0.75rem
+}
+.stack-grid > div {
+  @apply bg-zinc-800 p-3 rounded-md flex flex-row flex-wrap items-center justify-start gap-x-2
+}
+.stack-grid > div {
+  div > img {
+    @apply mx-auto h-6
+  }
+  div > span {
+    @apply text-sm text-slate-400
+  }
+  p{
+    @apply w-full text-lg font-bold
+  }
+}
+.stack-grid > div:nth-child(1){
+  grid-area: 1 / 1 / 2 / 2;
+}
+.stack-grid > div:nth-child(2){
+  grid-area: 1 / 2 / 2 / 4;
+}
+.stack-grid > div:nth-child(3){
+  grid-area: 2 / 1 / 3 / 3;
+}
+.stack-grid > div:nth-child(4){
+  grid-area: 2 / 3 / 3 / 4;
+}
