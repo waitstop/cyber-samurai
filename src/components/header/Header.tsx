@@ -18,15 +18,9 @@ const Header = () => {
     href: routesPaths | string;
     className?: string;
   }[] = [
-    { name: "Что мы делаем", href: "#" },
     { name: "Наши инструменты", href: "#" },
     { name: "Кейсы", href: "#" },
     { name: "Ваша боль/наше решение", href: "#" },
-    {
-      name: "Связаться с нами",
-      href: "#contact",
-      className: "button w-fit bg-white text-zinc-800",
-    },
   ];
   const { pathname } = useLocation();
   useEffect(() => {
@@ -70,6 +64,12 @@ const Header = () => {
             </li>
           ))}
         </ul>
+        <HashLink
+          to={"#contact"}
+          className={"hidden rounded-lg bg-white px-3 py-2 lg:block"}
+        >
+          Связаться с нами
+        </HashLink>
         <Sheet
           onOpenChange={(state) => setIsSheetOpen(state)}
           open={isSheetOpen}
@@ -102,6 +102,14 @@ const Header = () => {
                   </li>
                 ))}
               </ul>
+              <HashLink
+                to={"#contact"}
+                className={
+                  "mt-5 block rounded-lg bg-white px-3 py-2 text-black lg:hidden"
+                }
+              >
+                Связаться с нами
+              </HashLink>
             </SheetDescription>
           </SheetContent>
         </Sheet>
