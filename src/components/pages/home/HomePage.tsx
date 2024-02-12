@@ -25,6 +25,10 @@ import { PainSolutions } from "@pages/home/PainSolutions.ts";
 import { BanIcon, CheckIcon } from "lucide-react";
 import MainLayout from "@components/layouts/MainLayout.tsx";
 import RoadmapBg from "@components/RoadmapBg/RoadmapBg.tsx";
+import WhatWeCan from "@pages/home/WhatWeCan.tsx";
+
+import { routesPaths } from "@providers/router/routesPaths.ts";
+import { Button } from "@components/ui/button.tsx";
 
 const marqueeTexts = [
   { text: "#лендинг" },
@@ -41,16 +45,22 @@ const HomePage = () => {
       <section className={"container pb-16"}>
         <HomePageHeroText />
         <div className={"relative mx-auto w-fit"}>
-          <a
-            href={"#contact"}
-            className={"button relative z-10 mt-10 bg-black lg:text-xl"}
+          <Button
+            onClick={() => {
+              const el = document.getElementById("contact");
+              if (!el) return;
+              window.scrollTo({ top: el.offsetTop - 64, behavior: "smooth" });
+            }}
+            className={
+              "relative z-10 mt-10 bg-black py-3 font-normal md:p-6 md:text-xl"
+            }
           >
             Хочу сайт!
-          </a>
+          </Button>
           <LogoIcon
             style={{ animationFillMode: "both" }}
             className={
-              "absolute left-4 top-2 h-auto w-48 -translate-y-1/2 animate-logoStamp fill-none stroke-white stroke-[0.5px] animate-delay-[3s] lg:left-[100px] lg:top-[-100px] lg:w-[400px]"
+              "absolute left-4 top-2 h-auto w-48 -translate-y-1/2 animate-logoStamp fill-none stroke-white stroke-[0.5px] animate-delay-[3s] md:left-[100px] md:top-[-100px] md:w-[400px]"
             }
           />
         </div>
@@ -59,7 +69,7 @@ const HomePage = () => {
       <section className={"bg-zinc-800 pt-10"}>
         <h1
           className={
-            "container text-center text-xl font-bold uppercase lg:text-4xl"
+            "container text-center text-xl font-bold uppercase md:text-4xl"
           }
         >
           Что мы умеем
@@ -67,54 +77,33 @@ const HomePage = () => {
         <Tabs defaultValue={"site"}>
           <div className={"container w-fit"}>
             <TabsList
-              className={"py-10 lg:[&>button]:px-5 lg:[&>button]:text-xl"}
+              className={
+                "py-10 [&>button]:transition-all md:[&>button]:px-5 md:[&>button]:text-xl"
+              }
             >
-              <TabsTrigger
-                disabled={
-                  cases.filter((casesItem) => casesItem.type === "site")
-                    .length === 0
-                }
-                className={"group relative"}
-                value={"site"}
-              >
+              <TabsTrigger className={"group relative"} value={"site"}>
                 Сайт
               </TabsTrigger>
-              <TabsTrigger
-                disabled={
-                  cases.filter((casesItem) => casesItem.type === "app")
-                    .length === 0
-                }
-                className={"group relative"}
-                value={"app"}
-              >
+              <TabsTrigger className={"group relative"} value={"app"}>
                 Приложение
               </TabsTrigger>
-              <TabsTrigger
-                disabled={
-                  cases.filter((casesItem) => casesItem.type === "bot")
-                    .length === 0
-                }
-                className={"group relative"}
-                value={"bot"}
-              >
+              <TabsTrigger className={"group relative"} value={"bot"}>
                 Бот
               </TabsTrigger>
-              <TabsTrigger
-                disabled={
-                  cases.filter((casesItem) => casesItem.type === "seo")
-                    .length === 0
-                }
-                className={"group relative"}
-                value={"seo"}
-              >
+              <TabsTrigger className={"group relative"} value={"seo"}>
                 SEO
               </TabsTrigger>
             </TabsList>
           </div>
-          <Marquee className={"bg-blue-700 py-5"} speed={25}>
+          <Marquee className={"bg-blue-700 py-5"} autoFill speed={25}>
             {marqueeTexts.map(({ text, className }, i) => (
               <span key={"marquee" + i} className={"flex"}>
-                <p className={cn(["font-druk font-bold uppercase", className])}>
+                <p
+                  className={cn([
+                    "font-druk font-bold uppercase md:text-2xl",
+                    className,
+                  ])}
+                >
                   {text}
                 </p>
                 <div className="inline h-1 w-6 content-['']" />
@@ -134,21 +123,77 @@ const HomePage = () => {
                   items={cases.filter((caseItem) => caseItem.type === "site")}
                 />
               </TabsContent>
-              <TabsContent className={""} value={"app"}>
-                123
+              <TabsContent value={"app"}>
+                <WhatWeCan
+                  title={"Приложение"}
+                  description={
+                    "Мы создаем инновационные и удобные IOS и Android приложения, учитывая потребности и цели клиентов."
+                  }
+                  subtitle={
+                    "Мы предлагаем разработку приложений «под ключ», включая:"
+                  }
+                  tasks={[
+                    "Разработку идеи и концепции",
+                    "Проектирование интерфейса (прототип, пользовательский интерфейс, дизайн и наполнение контентом)",
+                    "Разработка бэкэнда: Создание серверной части приложения, включая базу данных, API и логику работы приложения",
+                    "Разработка фронтэнда: Реализация клиентской части приложения, включая дизайн, верстку и программирование пользовательского интерфейса",
+                    "Тестирование и отладка",
+                    "Релиз и запуск (App Store, Google Play)",
+                    "Поддержка и обновление",
+                  ]}
+                  image={"images/app_cover.png"}
+                />
               </TabsContent>
-              <TabsContent className={"container bg-black py-8"} value={"bot"}>
-                123
+              <TabsContent value={"bot"}>
+                <WhatWeCan
+                  title={"Бот"}
+                  description={
+                    "Мы создаем Telegram-ботов, которые уникальны для каждого заказчика, включая постоянную техническую поддержку бесперебойной работы. Возможный функционал:"
+                  }
+                  subTasks={[
+                    "Взаимодействие с базой данных (включая интеграцию с искусственным интеллектом)",
+                    "Парсинг информации из внешних источников в Telegram-бот",
+                  ]}
+                  subtitle={"Основные этапы разработки:"}
+                  tasks={[
+                    "Анализ и планирование функциональности бота",
+                    "Создание структуры бота, определение команд и функций, разработка диалоговых сценариев",
+                    "Разработка и интеграция: Создание программного кода для бота, интеграция с API Telegram, настройка базы данных и хранение информации",
+                    "Тестирование и отладка",
+                    "Развитие и поддержка: Добавление новых функций и возможностей, обновление бота в соответствии с требованиями пользователей, поддержка и обслуживание",
+                  ]}
+                  image={"images/bot_cover.png"}
+                />
               </TabsContent>
-              <TabsContent className={"container bg-black py-8"} value={"seo"}>
-                123
+              <TabsContent value={"seo"}>
+                <WhatWeCan
+                  title={"SEO"}
+                  description={
+                    "В стандартное пакетное решение по разработке сайта/лендинга входит первичная SEO-оптимизация. Помимо первичной SEO-оптимизации наша команда предоставляет услуги по комплексным работам по развитию и продвижению, включая оптимизацию посадочных страниц для поисковых систем и проработку коммерческих факторов."
+                  }
+                  subtitle={"Мы оказываем весь спектр услуг по SEO «под ключ»:"}
+                  tasks={[
+                    "Исследование рынка и конкурентов, определение наиболее релевантных ключевых слов и фраз",
+                    "Создание уникального и информативного контента, оптимизация заголовков, мета-тегов и описаний страниц с использованием ключевых слов",
+                    "Проверка и исправление ошибок в коде сайта, улучшение скорости загрузки страниц, оптимизация URL-адресов и структуры сайта",
+                    "Привлечение ссылок с других авторитетных сайтов, размещение гостевых постов и участие в отраслевых форумах",
+                    "Отслеживание показателей эффективности SEO-оптимизации, анализ трафика и поведения пользователей, внесение корректировок в стратегию",
+                    "Постоянное обновление контента, анализ и оптимизация ключевых слов, адаптация к изменениям алгоритмов поисковых систем",
+                  ]}
+                  image={"images/seo_cover.png"}
+                />
               </TabsContent>
             </div>
           </div>
-          <Marquee className={"bg-red-500 py-5"} speed={25}>
+          <Marquee className={"bg-red-500 py-5"} speed={25} autoFill>
             {marqueeTexts.reverse().map(({ text, className }, i) => (
               <span key={"marquee" + i} className={"flex"}>
-                <p className={cn(["font-druk font-bold uppercase", className])}>
+                <p
+                  className={cn([
+                    "font-druk font-bold uppercase md:text-2xl",
+                    className,
+                  ])}
+                >
                   {text}
                 </p>
                 <div className="inline h-1 w-6 content-['']" />
@@ -172,7 +217,7 @@ const HomePage = () => {
                 className={
                   "button w-fit whitespace-nowrap border-2 border-blue-700 bg-blue-700"
                 }
-                to={"/roadmap"}
+                to={routesPaths.ROADMAP}
               >
                 Дорожная карта
               </Link>
@@ -182,7 +227,7 @@ const HomePage = () => {
                 className={
                   "button w-fit whitespace-nowrap border-2 border-red-500"
                 }
-                to={"/tech"}
+                to={routesPaths.TECHNOLOGIES}
               >
                 Про технологии
               </Link>
@@ -192,19 +237,19 @@ const HomePage = () => {
                 className={
                   "button w-fit whitespace-nowrap border-2 border-amber-400"
                 }
-                to={"/solutions"}
+                to={routesPaths.SOLUTIONS}
               >
                 Пакетные решения
               </Link>
             </SwiperSlide>
           </Swiper>
           <div className={"mt-10"}>
-            <Link to={"/roadmap"}>
+            <Link to={routesPaths.ROADMAP}>
               <RoadmapBg classname={"w-full h-auto"} />
             </Link>
             <Link
               className={"button mt-10 w-fit bg-purple-500"}
-              to={"/roadmap"}
+              to={routesPaths.ROADMAP}
             >
               Смотреть все этапы
             </Link>
@@ -219,8 +264,8 @@ const HomePage = () => {
       <section className={"bg-red-500 py-10"}>
         <div className={"container"}>
           <div className={"flex-row gap-10 md:flex"}>
-            <div className={"md:w-3/5"}>
-              <h1 className={"text-xl uppercase"}>
+            <div className={"md:w-2/5"}>
+              <h1 className={"text-xl uppercase md:text-3xl"}>
                 Какие инструменты используем
               </h1>
               <h2
@@ -233,37 +278,55 @@ const HomePage = () => {
             </div>
 
             <Swiper
-              className={"mt-5 md:w-2/5"}
+              className={"pain-slider mt-5 w-full max-w-[400px] md:w-3/5"}
               modules={[EffectCards]}
               rewind
               effect={"cards"}
             >
               {PainSolutions.map(({ pain, solution }) => (
-                <SwiperSlide className={"cursor-grab rounded-xl bg-white p-3"}>
+                <SwiperSlide
+                  className={"h-min cursor-grab rounded-xl bg-white p-3"}
+                >
                   <div className={"grid grid-cols-2 gap-x-2"}>
-                    <div>
+                    <div
+                      className={
+                        "bg-transparent md:rounded-xl md:bg-red-600 md:p-2"
+                      }
+                    >
                       <span
                         className={
-                          "mb-2 flex justify-between rounded-xl bg-red-800 p-2 font-extrabold"
+                          "mb-2 flex justify-between rounded-xl bg-red-800 p-2 font-extrabold md:bg-transparent"
                         }
                       >
                         Боль
                         <BanIcon />
                       </span>
-                      <p className={"text-xs font-medium text-black/40"}>
+                      <p
+                        className={
+                          "text-xs font-medium text-black/40 md:text-white"
+                        }
+                      >
                         {pain}
                       </p>
                     </div>
-                    <div>
+                    <div
+                      className={
+                        "bg-transparent md:rounded-xl md:bg-green-600 md:p-2"
+                      }
+                    >
                       <span
                         className={
-                          "mb-2 flex justify-between rounded-xl bg-green-700 p-2 py-2 font-extrabold"
+                          "mb-2 flex justify-between rounded-xl bg-green-700 p-2 py-2 font-extrabold md:bg-transparent md:p-0"
                         }
                       >
                         Решение
                         <CheckIcon />
                       </span>
-                      <p className={"text-xs font-medium text-black/70"}>
+                      <p
+                        className={
+                          "text-xs font-medium text-black/70 md:font-normal md:text-white"
+                        }
+                      >
                         {solution}
                       </p>
                     </div>
@@ -275,7 +338,7 @@ const HomePage = () => {
 
           <Link
             className={"button mx-auto mt-10 w-fit bg-purple-500"}
-            to={"/pain-solutions"}
+            to={routesPaths.PAIN_SOLUTIONS}
           >
             Библиотека страданий
           </Link>
@@ -285,103 +348,170 @@ const HomePage = () => {
       <section className={"clients bg-black py-10 text-white"}>
         <div className={"container"}>
           <h1 className={"mb-5 text-xl uppercase"}>Наши клиенты</h1>
-          <div className={"mb-3 flex w-full justify-between gap-3"}>
-            <div className={"aspect-square basis-[30%]"}>
-              <img
-                className={"hover:bg-purple-500"}
-                src="images/clients/rmg_logo.svg"
-                alt=""
-              />
+          <div className={"md:hidden"}>
+            <div className={"mb-3 flex w-full justify-between gap-3"}>
+              <div className={"aspect-square basis-[30%]"}>
+                <img
+                  className={"hover:bg-purple-500"}
+                  src="images/clients/rmg_logo.svg"
+                  alt=""
+                />
+              </div>
+              <div className={"basis-[20%]"}>
+                <img
+                  className={"hover:bg-purple-500"}
+                  src="images/clients/monte_carlo.svg"
+                  alt=""
+                />
+              </div>
+              <div className={"basis-1/2"}>
+                <img
+                  className={"hover:bg-purple-500"}
+                  src="images/clients/hit_logo.svg"
+                  alt=""
+                />
+              </div>
             </div>
-            <div className={"basis-[20%]"}>
-              <img
-                className={"hover:bg-purple-500"}
-                src="images/clients/monte_carlo.svg"
-                alt=""
-              />
+            <div className={"flex gap-x-3"}>
+              <div className={"aspect-square basis-2/5"}>
+                <img
+                  className={"hover:bg-purple-500"}
+                  src="images/clients/dfm_logo.svg"
+                  alt=""
+                />
+              </div>
+              <div className={"flex basis-3/5 flex-col gap-y-3"}>
+                <div className={"h-full"}>
+                  <img
+                    className={"hover:bg-purple-500"}
+                    src="images/clients/mult_logo.svg"
+                    alt=""
+                  />
+                </div>
+                <div className={"h-full"}>
+                  <img
+                    className={"hover:bg-purple-500"}
+                    src="images/clients/station_logo.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
             </div>
-            <div className={"basis-1/2"}>
-              <img
-                className={"hover:bg-purple-500"}
-                src="images/clients/hit_logo.svg"
-                alt=""
-              />
+            <div className={"mt-3 flex flex-row gap-3"}>
+              <div className={"basis-2/4"}>
+                <img
+                  className={"hover:bg-purple-500"}
+                  src="images/clients/maximum_logo.svg"
+                  alt=""
+                />
+              </div>
+              <div className={"basis-1/4"}>
+                <img
+                  className={"hover:bg-purple-500"}
+                  src="images/clients/ct_logo.svg"
+                  alt=""
+                />
+              </div>
+              <div className={"flex basis-2/4 flex-col gap-3"}>
+                <div>
+                  <img
+                    className={"hover:bg-purple-500"}
+                    src="images/clients/nst_logo.svg"
+                    alt=""
+                  />
+                </div>
+                <div>
+                  <img
+                    className={"hover:bg-purple-500"}
+                    src="images/clients/domvet_logo.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
-          <div className={"flex gap-x-3"}>
-            <div className={"aspect-square basis-2/5"}>
-              <img
-                className={"hover:bg-purple-500"}
-                src="images/clients/dfm_logo.svg"
-                alt=""
-              />
-            </div>
-            <div className={"flex basis-3/5 flex-col gap-y-3"}>
-              <div className={"h-full"}>
+          <div className={"hidden md:block"}>
+            <div className={"mb-3 flex w-full justify-between gap-3"}>
+              <div className={"aspect-square basis-[30%]"}>
                 <img
                   className={"hover:bg-purple-500"}
-                  src="images/clients/mult_logo.svg"
+                  src="images/clients/rmg_logo.svg"
                   alt=""
                 />
               </div>
-              <div className={"h-full"}>
+              <div className={"basis-[20%]"} style={{ paddingInline: "2rem" }}>
                 <img
                   className={"hover:bg-purple-500"}
-                  src="images/clients/station_logo.svg"
+                  src="images/clients/monte_carlo.svg"
+                  alt=""
+                />
+              </div>
+              <div className={"basis-1/2"}>
+                <img
+                  className={"hover:bg-purple-500"}
+                  src="images/clients/hit_logo.svg"
+                  alt=""
+                />
+              </div>
+              <div className={"aspect-square basis-2/5"}>
+                <img
+                  className={"hover:bg-purple-500"}
+                  src="images/clients/dfm_logo.svg"
                   alt=""
                 />
               </div>
             </div>
-          </div>
-
-          <div className={"mt-3 flex flex-row gap-3"}>
-            <div className={"basis-2/4"}>
-              <img
-                className={"hover:bg-purple-500"}
-                src="images/clients/maximum_logo.svg"
-                alt=""
-              />
-            </div>
-            <div className={"basis-1/4"}>
-              <img
-                className={"hover:bg-purple-500"}
-                src="images/clients/ct_logo.svg"
-                alt=""
-              />
-            </div>
-            <div className={"flex basis-2/4 flex-col gap-3"}>
-              <div>
+            <div className={"flex gap-x-3"}>
+              <div className={"flex basis-full flex-col gap-y-3"}>
+                <div className={"h-full"} style={{ paddingInline: "5rem" }}>
+                  <img
+                    className={"hover:bg-purple-500"}
+                    src="images/clients/mult_logo.svg"
+                    alt=""
+                  />
+                </div>
+                <div className={"h-full"} style={{ paddingInline: "3rem" }}>
+                  <img
+                    className={"hover:bg-purple-500"}
+                    src="images/clients/station_logo.svg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div className={"basis-2/4"}>
                 <img
                   className={"hover:bg-purple-500"}
-                  src="images/clients/nst_logo.svg"
+                  src="images/clients/maximum_logo.svg"
                   alt=""
                 />
               </div>
-              <div>
+              <div className={"basis-1/4"} style={{ paddingInline: "2rem" }}>
                 <img
                   className={"hover:bg-purple-500"}
-                  src="images/clients/domvet_logo.svg"
+                  src="images/clients/ct_logo.svg"
                   alt=""
                 />
+              </div>
+              <div className={"flex basis-2/4 flex-col gap-3"}>
+                <div className={"h-full"}>
+                  <img
+                    className={"hover:bg-purple-500"}
+                    src="images/clients/nst_logo.svg"
+                    alt=""
+                  />
+                </div>
+                <div className={"h-full"}>
+                  <img
+                    className={"hover:bg-purple-500"}
+                    src="images/clients/domvet_logo.svg"
+                    alt=""
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <section className={"overflow-hidden bg-violet-accent"}>
-        <Link to={"raffles-app"}>
-          <img
-            className={"container mx-auto -mb-1 h-auto w-full lg:hidden"}
-            src="images/raffles.svg"
-            alt="raffles"
-          />
-          <img
-            className={"container mx-auto -mb-1 hidden h-auto w-full lg:block"}
-            src="images/raffles_desktop.svg"
-            alt="raffles"
-          />
-        </Link>
       </section>
     </MainLayout>
   );

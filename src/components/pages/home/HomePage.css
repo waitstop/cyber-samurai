@@ -8,10 +8,16 @@ section.roadmap .swiper-slide {
 @layer base {
   section.clients > div {
     & div:has(> img):hover{
-      @apply bg-purple-500 scale-105
+      @apply bg-purple-500 scale-[1.025]
     }
     & div:has(> img) {
-      @apply bg-zinc-800 rounded-xl flex justify-center items-center p-4 w-full transition-all
+      @apply bg-zinc-800 rounded-xl flex justify-center items-center p-4 md:px-14 md:py-8 w-full transition-all
     }
+    & div:has(> img) img {
+      @apply md:w-full
+    }
+  }
+  .pain-slider .swiper-slide{
+    height: min-content;
   }
 }

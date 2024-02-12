@@ -36,71 +36,75 @@ const ContactForm = () => {
     <Form {...form}>
       <h2 className={"mb-6 text-xl uppercase"}>Форма связи</h2>
       <form
-        className={"relative overflow-hidden [&>*]:mb-3"}
+        className={"relative overflow-hidden"}
         onSubmit={form.handleSubmit(onSubmit)}
       >
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Имя*" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="phone"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Телефон*" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Textarea placeholder="Кратко опишите задачу*" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <FormField
-          control={form.control}
-          name="companyName"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Компания" {...field} />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button className={"mt-3"} onClick={form.handleSubmit(onSubmit)}>
-          Отправить
-        </Button>
-        <p className={"mt-3 w-56 pb-10 text-xs leading-none opacity-50"}>
-          Нажимая кнопку вы соглашаетесь на&nbsp;
-          <Link
-            className={"underline underline-offset-[5px]"}
-            to={"/documents/privacy"}
-          >
-            обработку персональных данных
-          </Link>
-        </p>
+        <div className={"md:w-2/3 [&>*]:mb-3"}>
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input placeholder="Имя*" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="phone"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input placeholder="Телефон*" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="message"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Textarea placeholder="Кратко опишите задачу*" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="companyName"
+            render={({ field }) => (
+              <FormItem>
+                <FormControl>
+                  <Input placeholder="Компания" {...field} />
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button className={"mt-3"} onClick={form.handleSubmit(onSubmit)}>
+            Отправить
+          </Button>
+          <p className={"mt-3 w-56 pb-10 text-xs leading-none opacity-50"}>
+            Нажимая кнопку вы соглашаетесь на&nbsp;
+            <Link
+              className={"underline underline-offset-[5px]"}
+              to={"/documents/privacy"}
+            >
+              обработку персональных данных
+            </Link>
+          </p>
+        </div>
         <img
-          className={"absolute -bottom-10 -right-14 w-48"}
+          className={
+            "absolute -bottom-20 -right-0 block w-28 md:right-0 md:top-0 md:w-64"
+          }
           src="images/maskot_1.png"
           alt="maskot"
         />

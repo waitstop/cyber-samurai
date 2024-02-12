@@ -22,3 +22,13 @@
     @apply py-2.5 px-4 rounded-md flex flex-row justify-center items-center gap-1
   }
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}

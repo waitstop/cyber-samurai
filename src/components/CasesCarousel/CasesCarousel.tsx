@@ -116,12 +116,16 @@ const CasesCarouselMobile = ({
                       ))}
                     </ul>
                     <a
-                      className={"button mt-4 w-fit bg-purple-500"}
+                      className={"button mt-4 w-fit max-w-full bg-purple-500"}
                       href={caseItem.link}
                       target={"_blank"}
                     >
                       <LinkIcon className={"inline"} />
-                      <span className={"truncate font-druk text-xs uppercase"}>
+                      <span
+                        className={
+                          "w-full truncate font-druk text-xs uppercase"
+                        }
+                      >
                         {punycode.toUnicode(new URL(caseItem.link).host)}
                       </span>
                     </a>
@@ -227,7 +231,7 @@ const CasesCarouselDesktop = (props: Omit<Props, "navigation">) => {
                   <li
                     key={currentItem.title + "_task_" + i}
                     className={
-                      "flex items-start justify-start gap-x-2 before:mt-2.5 before:block before:aspect-square before:h-1 before:w-1 before:rounded-full before:bg-purple-500"
+                      "flex items-start justify-start gap-x-2 before:mt-2.5 before:block before:aspect-square before:h-1.5 before:w-1.5 before:rounded-full before:bg-purple-500"
                     }
                   >
                     <p>{task}</p>
