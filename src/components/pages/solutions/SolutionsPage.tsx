@@ -132,7 +132,7 @@ const SolutionsPage = () => {
           </div>
         </div>
       </section>
-      <section className={"bg-zinc-800 py-10 text-white"}>
+      <section className={"bg-zinc-800 pt-10 text-white"}>
         <div className={"container"}>
           <ContactForm />
         </div>

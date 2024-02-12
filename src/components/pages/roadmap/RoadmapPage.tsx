@@ -45,6 +45,7 @@ const RoadmapPage = () => {
           </Link>
         </div>
       </section>
+      <div className="anchor-point" id={"contact"} />
       <section className={"bg-zinc-800 pt-10 text-white"}>
         <div className={"container"}>
           <ContactForm />

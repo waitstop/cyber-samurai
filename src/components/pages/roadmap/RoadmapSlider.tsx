@@ -18,7 +18,7 @@ const RoadmapCard = ({
   <div className={"flex flex-col"}>
     <span
       className={
-        "w-fit rounded-t-md bg-white px-2 py-1 font-druk text-xl font-bold"
+        "w-fit translate-y-[1px] rounded-t-md bg-white px-2 py-1 font-druk text-xl font-bold"
       }
     >
       Этап {index + 1}
@@ -40,7 +40,6 @@ const RoadmapSlider = () => {
     <>
       <div className={"hidden md:block"}>
         <Swiper
-          loop
           grabCursor
           modules={[FreeMode]}
           freeMode

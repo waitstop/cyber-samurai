@@ -27,31 +27,83 @@ const SolutionAccordion = (props: Props) => {
         {props.type === "sell" && "Продажа товаров и услуг"}
       </h1>
       {props.data.map(({ title, content, icon }, i) => (
-        <AccordionItem
-          className={cn("text-white", i !== 0 && "mt-2.5")}
-          value={`${props.type}-${i}`}
-          key={i + "_" + props.type}
-        >
-          <AccordionTrigger
-            headerClassname={cn(
-              "rounded-md p-2",
-              props.type === "landing" && "bg-blue-700",
-              props.type === "site" && "bg-red-500",
-              props.type === "sell" && "bg-amber-400",
-            )}
-            className={
-              "flex flex-row items-center justify-between text-left font-inter text-base font-bold"
-            }
+        <>
+          <AccordionItem
+            className={cn("text-white", i !== 0 && "mt-2.5")}
+            value={`${props.type}-${i}`}
+            key={i + "_" + props.type}
           >
-            <div className={"flex flex-row items-center justify-start gap-x-2"}>
-              {icon}
-              <span>{title}</span>
-            </div>
-          </AccordionTrigger>
-          <AccordionContent className={"p-2 text-zinc-400"}>
-            {content}
-          </AccordionContent>
-        </AccordionItem>
+            <AccordionTrigger
+              headerClassname={cn(
+                "rounded-md p-2",
+                props.type === "landing" && "bg-blue-700",
+                props.type === "site" && "bg-red-500",
+                props.type === "sell" && "bg-amber-400",
+              )}
+              className={
+                "flex flex-row items-center justify-between text-left font-inter text-base font-bold"
+              }
+            >
+              <div
+                className={"flex flex-row items-center justify-start gap-x-2"}
+              >
+                {icon}
+                <span>{title}</span>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent className={"p-2 text-zinc-400"}>
+              {content}
+            </AccordionContent>
+          </AccordionItem>
+          {props.type === "landing" && i === 1 && (
+            <a href={"https://istina.ru/"}>
+              <img
+                className={
+                  "mt-3 h-auto w-full rounded-md object-cover object-top"
+                }
+                src="images/solutions/istina.png"
+                alt="istina"
+              />
+            </a>
+          )}
+
+          {props.type === "site" && i === 1 && (
+            <a href={"https://www.istorii.istochnik.space/"}>
+              <img
+                className={
+                  "mt-3 h-auto w-full rounded-md object-cover object-top"
+                }
+                src="images/solutions/istochnik.png"
+                alt="istina"
+              />
+            </a>
+          )}
+
+          {props.type === "sell" && i === 1 && (
+            <a href={"https://latrika.com/"}>
+              <img
+                className={
+                  "mt-3 h-auto w-full rounded-md object-cover object-top"
+                }
+                src="images/solutions/latrica.png"
+                alt="istina"
+              />
+            </a>
+          )}
+
+          {(props.type === "site" || props.type === "sell") &&
+            i === props.data.length - 1 && (
+              <a href={"https://horrorfestival.ru/"}>
+                <img
+                  className={
+                    "mt-3 h-auto w-full rounded-md object-cover object-top"
+                  }
+                  src="images/solutions/horrorfest.png"
+                  alt="istina"
+                />
+              </a>
+            )}
+        </>
       ))}
     </Accordion>
   );

@@ -130,11 +130,13 @@ const TechnologiesPage = () => {
           <span className={"text-black"}>Библиотеку Страданий</span>, в ней вы
           можете найти свою боль и наше решение
         </h1>
-        <img
-          className={"my-5 aspect-video w-full rounded-md object-cover"}
-          src="images/tech/cover_3.png"
-          alt="cover_3"
-        />
+        <Link to={routesPaths.PAIN_SOLUTIONS}>
+          <img
+            className={"my-5 aspect-video w-full rounded-md object-cover"}
+            src="images/tech/cover_3.png"
+            alt="cover_3"
+          />
+        </Link>
         <Link
           className={"button w-fit bg-purple-500 md:mx-auto"}
           to={routesPaths.PAIN_SOLUTIONS}

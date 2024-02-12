@@ -3,7 +3,6 @@ import {
   Code2,
   Database,
   FilePenLine,
-  MonitorCheck,
   PackageCheck,
   Palette,
   Terminal,
@@ -54,11 +53,6 @@ let landingData: Data[] = [
     content: "Тестирование работоспособности лендинга и приёмка клиентом",
     icon: <CheckCheck />,
   },
-  {
-    title: "Поддержка лендинга",
-    content: "Дизайнеры не написали мне текст( или я его не нашел",
-    icon: <MonitorCheck />,
-  },
 ];
 
 let siteData: Data[] = [
@@ -107,11 +101,6 @@ let siteData: Data[] = [
     title: "Тестирование",
     content: "Тестирование работоспособности лендинга и приёмка клиентом",
     icon: <CheckCheck />,
-  },
-  {
-    title: "Поддержка лендинга",
-    content: "Дизайнеры не написали мне текст( или я его не нашел",
-    icon: <MonitorCheck />,
   },
 ];
 
@@ -167,11 +156,6 @@ let sellData: Data[] = [
     title: "Тестирование",
     content: "Тестирование работоспособности лендинга и приёмка клиентом",
     icon: <CheckCheck />,
-  },
-  {
-    title: "Поддержка сайта",
-    content: "Дизайнеры не написали мне текст( или я его не нашел",
-    icon: <MonitorCheck />,
   },
 ];
 

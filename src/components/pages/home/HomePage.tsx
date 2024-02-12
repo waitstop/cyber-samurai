@@ -18,7 +18,7 @@ import "swiper/css";
 import "swiper/css/free-mode";
 import "swiper/css/effect-cards";
 import "./HomePage.css";
-import { EffectCards, FreeMode } from "swiper/modules";
+import { EffectCards } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import ContactForm from "@components/ContactForm/ContactForm.tsx";
 import { PainSolutions } from "@pages/home/PainSolutions.ts";
@@ -28,7 +28,7 @@ import RoadmapBg from "@components/RoadmapBg/RoadmapBg.tsx";
 import WhatWeCan from "@pages/home/WhatWeCan.tsx";
 
 import { routesPaths } from "@providers/router/routesPaths.ts";
-import { Button } from "@components/ui/button.tsx";
+import { HashLink } from "react-router-hash-link";
 
 const marqueeTexts = [
   { text: "#лендинг" },
@@ -45,18 +45,14 @@ const HomePage = () => {
       <section className={"container pb-16"}>
         <HomePageHeroText />
         <div className={"relative mx-auto w-fit"}>
-          <Button
-            onClick={() => {
-              const el = document.getElementById("contact");
-              if (!el) return;
-              window.scrollTo({ top: el.offsetTop - 64, behavior: "smooth" });
-            }}
+          <HashLink
+            to={"#contact"}
             className={
-              "relative z-10 mt-10 bg-black py-3 font-normal md:p-6 md:text-xl"
+              "button relative z-10 mt-10 bg-black py-3 font-normal md:p-6 md:text-xl"
             }
           >
             Хочу сайт!
-          </Button>
+          </HashLink>
           <LogoIcon
             style={{ animationFillMode: "both" }}
             className={
@@ -66,6 +62,7 @@ const HomePage = () => {
         </div>
       </section>
       {/* Cases */}
+      <div className="anchor-point" id={"cases"} />
       <section className={"bg-zinc-800 pt-10"}>
         <h1
           className={
@@ -205,44 +202,34 @@ const HomePage = () => {
       {/* RoadmapBg */}
       <section className={"roadmap bg-black py-10"}>
         <div className={"container"}>
-          <Swiper
-            modules={[FreeMode]}
-            className={"pr-6 md:prose-a:text-2xl"}
-            spaceBetween={10}
-            slidesPerView={"auto"}
-            freeMode
+          <div
+            className={"hide-scrollbar flex flex-row gap-x-3 overflow-x-scroll"}
           >
-            <SwiperSlide className={"w-fit"}>
-              <Link
-                className={
-                  "button w-fit whitespace-nowrap border-2 border-blue-700 bg-blue-700"
-                }
-                to={routesPaths.ROADMAP}
-              >
-                Дорожная карта
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link
-                className={
-                  "button w-fit whitespace-nowrap border-2 border-red-500"
-                }
-                to={routesPaths.TECHNOLOGIES}
-              >
-                Про технологии
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link
-                className={
-                  "button w-fit whitespace-nowrap border-2 border-amber-400"
-                }
-                to={routesPaths.SOLUTIONS}
-              >
-                Пакетные решения
-              </Link>
-            </SwiperSlide>
-          </Swiper>
+            <Link
+              className={
+                "button w-fit whitespace-nowrap border-2 border-blue-700 bg-blue-700"
+              }
+              to={routesPaths.ROADMAP}
+            >
+              Дорожная карта
+            </Link>
+            <Link
+              className={
+                "button w-fit whitespace-nowrap border-2 border-red-500"
+              }
+              to={routesPaths.TECHNOLOGIES}
+            >
+              Про технологии
+            </Link>
+            <Link
+              className={
+                "button w-fit whitespace-nowrap border-2 border-amber-400"
+              }
+              to={routesPaths.SOLUTIONS}
+            >
+              Пакетные решения
+            </Link>
+          </div>
           <div className={"mt-10"}>
             <Link to={routesPaths.ROADMAP}>
               <RoadmapBg classname={"w-full h-auto"} />
@@ -256,11 +243,13 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className={"bg-zinc-800 pt-10"} id={"contact"}>
+      <div className="anchor-point" id={"contact"} />
+      <section className={"bg-zinc-800 pt-10"}>
         <div className={"container"}>
           <ContactForm />
         </div>
       </section>
+      <div className={"anchor-point"} id={"instruments"} />
       <section className={"bg-red-500 py-10"}>
         <div className={"container"}>
           <div className={"flex-row gap-10 md:flex"}>

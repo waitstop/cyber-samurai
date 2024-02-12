@@ -8,12 +8,12 @@
 }
 
 .grid-solutions > div {
-  p {
+  & p {
     color: black;
   }
 
-  h3 {
-    @apply text-xs leading-snug md:mb-2.5
+  & h3 {
+    @apply text-xs leading-snug md:mb-2.5 md:text-lg
   }
 
   @apply bg-white w-full rounded-md p-3 md:p-5 md:rounded-lg

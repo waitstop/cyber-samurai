@@ -1,0 +1,7 @@
+
+.pain-solution-swiper .swiper-slide-next{
+  filter: brightness(0.8);
+}
+.pain-solution-swiper .swiper-slide:not(.swiper-slide-visible):not(.swiper-slide-next){
+  filter: brightness(0.5);
+}
