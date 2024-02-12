@@ -32,3 +32,9 @@
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
 }
+.anchor-point{
+  content: '';
+  display: block;
+  height: 64px;
+  margin-top: -64px;
+}
