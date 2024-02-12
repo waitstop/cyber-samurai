@@ -55,6 +55,7 @@ export default {
                     500: "rgba(226,57,79,1)",
                 },
                 green: {
+                    600: "rgba(46,172,27,1)",
                     700: "rgba(16,136,5,1)",
                 },
                 amber: {
@@ -95,6 +96,14 @@ export default {
                     opacity: 100,
                 },
             },
+            "accordion-down": {
+                from: { height: "0" },
+                to: { height: "var(--radix-accordion-content-height)" },
+            },
+            "accordion-up": {
+                from: { height: "var(--radix-accordion-content-height)" },
+                to: { height: "0" },
+            },
             rotate: {
                 "0%": {
                     transform: "rotate(0deg)",
@@ -111,6 +120,8 @@ export default {
             moveRight: "moveRight 0.8s ease-in-out",
             logoStamp: "logoStamp 200ms ease-in",
             rotate: "rotate 5s linear infinite",
+            "accordion-down": "accordion-down 0.2s ease-out",
+            "accordion-up": "accordion-up 0.2s ease-out",
         },
     },
 };
