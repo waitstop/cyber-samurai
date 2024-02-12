@@ -1,0 +1,6 @@
+.steps-swiper .swiper-slide-next{
+  filter: brightness(0.8);
+}
+.steps-swiper .swiper-slide:not(.swiper-slide-visible):not(.swiper-slide-next){
+  filter: brightness(0.5);
+}
