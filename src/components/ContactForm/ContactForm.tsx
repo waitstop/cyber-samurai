@@ -12,11 +12,21 @@ import { Input } from "@components/ui/input.tsx";
 import { Textarea } from "@components/ui/textarea.tsx";
 import { Button } from "@components/ui/button.tsx";
 import { Link } from "react-router-dom";
+import { PatternFormat } from "react-number-format";
+import { isValidPhoneNumber } from "libphonenumber-js";
+import emailjs from "@emailjs/browser";
+import { useToast } from "@components/ui/use-toast.ts";
+import { useState } from "react";
+import { RefreshCcw } from "lucide-react";
 
 const ContactForm = () => {
   const schema = z.object({
     name: z.string({ required_error: "Имя не может быть пустым" }),
-    phone: z.string({ required_error: "Телефон не может быть пустым" }),
+    phone: z
+      .string({ required_error: "Телефон не может быть пустым" })
+      .refine((val) => {
+        return isValidPhoneNumber(val, "RU");
+      }, "Неверный формат телефона"),
     message: z
       .string({ required_error: "Сообщение не может быть пустым" })
       .min(10, "Сообщение должно содержать не менее 10 символов")
@@ -24,12 +34,36 @@ const ContactForm = () => {
     companyName: z.string().optional(),
   });
 
+  const { toast } = useToast();
+  const [isLoadingSend, setIsLoadingSend] = useState<boolean>(false);
+
   const form = useForm<z.infer<typeof schema>>({
     resolver: zodResolver(schema),
   });
 
   function onSubmit(data: z.infer<typeof schema>) {
-    console.log(data);
+    setIsLoadingSend(true);
+    emailjs
+      .send(
+        "service_76k4cb9",
+        "template_d8tffy6",
+        { ...data },
+        { publicKey: "LE5a8UXysFoBM3BkN" },
+      )
+      .then(() => {
+        toast({
+          title: "Сообщение отправлено",
+        });
+        form.reset();
+      })
+      .catch(() => {
+        toast({
+          title: "Произошла ошибка",
+        });
+      })
+      .finally(() => {
+        setIsLoadingSend(false);
+      });
   }
 
   return (
@@ -58,7 +92,15 @@ const ContactForm = () => {
             render={({ field }) => (
               <FormItem>
                 <FormControl>
-                  <Input placeholder="Телефон*" {...field} />
+                  <PatternFormat
+                    className={
+                      "w-full rounded-md px-3 py-4 text-black placeholder:text-black/30 focus:outline-none"
+                    }
+                    placeholder={"Телефон*"}
+                    {...field}
+                    mask={"_"}
+                    format="+7 (###) ###-##-##"
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -88,8 +130,16 @@ const ContactForm = () => {
               </FormItem>
             )}
           />
-          <Button className={"mt-3"} onClick={form.handleSubmit(onSubmit)}>
-            Отправить
+          <Button
+            disabled={isLoadingSend}
+            className={"mt-3"}
+            onClick={form.handleSubmit(onSubmit)}
+          >
+            {isLoadingSend ? (
+              <RefreshCcw className={"animate-spin"} />
+            ) : (
+              "Отправить"
+            )}
           </Button>
           <p className={"mt-3 w-56 pb-10 text-xs leading-none opacity-50"}>
             Нажимая кнопку вы соглашаетесь на&nbsp;

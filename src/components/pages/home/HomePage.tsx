@@ -56,7 +56,7 @@ const HomePage = () => {
           <LogoIcon
             style={{ animationFillMode: "both" }}
             className={
-              "absolute left-4 top-2 h-auto w-48 -translate-y-1/2 animate-logoStamp fill-none stroke-white stroke-[0.5px] animate-delay-[3s] md:left-[100px] md:top-[-100px] md:w-[400px]"
+              "absolute -top-10 left-10 h-auto w-48 -translate-y-1/2 animate-logoStamp fill-none stroke-white stroke-[0.5px] animate-delay-[3s] md:left-[100px] md:top-[-100px] md:w-[400px]"
             }
           />
         </div>

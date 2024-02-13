@@ -2,7 +2,7 @@ import Header from "@components/header/Header.tsx";
 import Footer from "@components/footer/Footer.tsx";
 import React from "react";
 import { Link } from "react-router-dom";
-
+import { Toaster } from "@components/ui/toaster";
 import { routesPaths } from "@providers/router/routesPaths.ts";
 
 type Props = {
@@ -31,6 +31,7 @@ const MainLayout = ({ className, children }: Props) => {
         </Link>
       </section>
       <Footer />
+      <Toaster />
     </>
   );
 };
