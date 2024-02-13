@@ -18,14 +18,14 @@ const MainLayout = ({ className, children }: Props) => {
         <Link to={routesPaths.RAFFLE_APP}>
           <img
             className={"container mx-auto -mb-1 h-auto w-full md:hidden"}
-            src="images/raffles.svg"
+            src="images/raffles.png"
             alt="raffles"
           />
           <img
             className={
               "container mx-auto -mb-1 hidden h-full w-full object-cover md:block"
             }
-            src="images/raffles_desktop.svg"
+            src="images/raffles_desktop.png"
             alt="raffles"
           />
         </Link>

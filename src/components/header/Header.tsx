@@ -18,9 +18,9 @@ const Header = () => {
     href: routesPaths | string;
     className?: string;
   }[] = [
-    { name: "Наши инструменты", href: "#" },
-    { name: "Кейсы", href: "#" },
-    { name: "Ваша боль/наше решение", href: "#" },
+    { name: "Наши инструменты", href: "/#instruments" },
+    { name: "Кейсы", href: "/#cases" },
+    { name: "Ваша боль/наше решение", href: routesPaths.PAIN_SOLUTIONS },
   ];
   const { pathname } = useLocation();
   useEffect(() => {
@@ -58,9 +58,9 @@ const Header = () => {
               }
               key={index}
             >
-              <a className={item.className} href={item.href}>
+              <HashLink className={item.className} to={item.href}>
                 {item.name}
-              </a>
+              </HashLink>
             </li>
           ))}
         </ul>
@@ -74,7 +74,7 @@ const Header = () => {
           onOpenChange={(state) => setIsSheetOpen(state)}
           open={isSheetOpen}
         >
-          <SheetTrigger className={"lg:hidden"}>
+          <SheetTrigger className={"-m-2 p-2 lg:hidden"}>
             <BurgerIcon />
           </SheetTrigger>
           <SheetContent className={"lg:hidden"}>
