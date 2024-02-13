@@ -109,7 +109,7 @@ export default {
                     transform: "rotate(0deg)",
                 },
                 "100%": {
-                    transform: "rotate(360deg)",
+                    transform: "rotate(-360deg)",
                 },
             },
         },
@@ -122,6 +122,7 @@ export default {
             rotate: "rotate 5s linear infinite",
             "accordion-down": "accordion-down 0.2s ease-out",
             "accordion-up": "accordion-up 0.2s ease-out",
+            spin: "rotate 2s linear infinite",
         },
     },
 };
