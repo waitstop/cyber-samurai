@@ -8,7 +8,7 @@
     "dev": "vite --base=/",
     "zip": "zip -r cybersamurai-dist.zip ./dist",
     "build": "tsc && vite build",
-    "gh-build": "tsc && vite build --mode gh-pages base=/cyber-samurai/",
+    "gh-build": "tsc && vite build --mode gh-pages --base=/cyber-samurai/",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "preinstall": "npx only-allow pnpm",
