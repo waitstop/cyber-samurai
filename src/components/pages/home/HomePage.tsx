@@ -340,81 +340,41 @@ const HomePage = () => {
           <div className={"md:hidden"}>
             <div className={"mb-3 flex w-full justify-between gap-3"}>
               <div className={"aspect-square basis-[30%]"}>
-                <img
-                  className={"hover:bg-purple-500"}
-                  src="images/clients/rmg_logo.svg"
-                  alt=""
-                />
+                <img src="images/clients/rmg_logo.svg" alt="" />
               </div>
               <div className={"basis-[20%]"}>
-                <img
-                  className={"hover:bg-purple-500"}
-                  src="images/clients/monte_carlo.svg"
-                  alt=""
-                />
+                <img src="images/clients/monte_carlo.svg" alt="" />
               </div>
               <div className={"basis-1/2"}>
-                <img
-                  className={"hover:bg-purple-500"}
-                  src="images/clients/hit_logo.svg"
-                  alt=""
-                />
+                <img src="images/clients/hit_logo.svg" alt="" />
               </div>
             </div>
             <div className={"flex gap-x-3"}>
               <div className={"aspect-square basis-2/5"}>
-                <img
-                  className={"hover:bg-purple-500"}
-                  src="images/clients/dfm_logo.svg"
-                  alt=""
-                />
+                <img src="images/clients/dfm_logo.svg" alt="" />
               </div>
               <div className={"flex basis-3/5 flex-col gap-y-3"}>
                 <div className={"h-full"}>
-                  <img
-                    className={"hover:bg-purple-500"}
-                    src="images/clients/mult_logo.svg"
-                    alt=""
-                  />
+                  <img src="images/clients/mult_logo.svg" alt="" />
                 </div>
                 <div className={"h-full"}>
-                  <img
-                    className={"hover:bg-purple-500"}
-                    src="images/clients/station_logo.svg"
-                    alt=""
-                  />
+                  <img src="images/clients/station_logo.svg" alt="" />
                 </div>
               </div>
             </div>
             <div className={"mt-3 flex flex-row gap-3"}>
               <div className={"basis-2/4"}>
-                <img
-                  className={"hover:bg-purple-500"}
-                  src="images/clients/maximum_logo.svg"
-                  alt=""
-                />
+                <img src="images/clients/maximum_logo.svg" alt="" />
               </div>
               <div className={"basis-1/4"}>
-                <img
-                  className={"hover:bg-purple-500"}
-                  src="images/clients/ct_logo.svg"
-                  alt=""
-                />
+                <img src="images/clients/ct_logo.svg" alt="" />
               </div>
               <div className={"flex basis-2/4 flex-col gap-3"}>
                 <div>
-                  <img
-                    className={"hover:bg-purple-500"}
-                    src="images/clients/nst_logo.svg"
-                    alt=""
-                  />
+                  <img src="images/clients/nst_logo.svg" alt="" />
                 </div>
                 <div>
-                  <img
-                    className={"hover:bg-purple-500"}
-                    src="images/clients/domvet_logo.svg"
-                    alt=""
-                  />
+                  <img src="images/clients/domvet_logo.svg" alt="" />
                 </div>
               </div>
             </div>
@@ -423,79 +383,39 @@ const HomePage = () => {
           <div className={"hidden md:block"}>
             <div className={"mb-3 flex w-full justify-between gap-3"}>
               <div className={"aspect-square basis-[30%]"}>
-                <img
-                  className={"hover:bg-purple-500"}
-                  src="images/clients/rmg_logo.svg"
-                  alt=""
-                />
+                <img src="images/clients/rmg_logo.svg" alt="" />
               </div>
               <div className={"basis-[20%]"} style={{ paddingInline: "2rem" }}>
-                <img
-                  className={"hover:bg-purple-500"}
-                  src="images/clients/monte_carlo.svg"
-                  alt=""
-                />
+                <img src="images/clients/monte_carlo.svg" alt="" />
               </div>
               <div className={"basis-1/2"}>
-                <img
-                  className={"hover:bg-purple-500"}
-                  src="images/clients/hit_logo.svg"
-                  alt=""
-                />
+                <img src="images/clients/hit_logo.svg" alt="" />
               </div>
               <div className={"aspect-square basis-2/5"}>
-                <img
-                  className={"hover:bg-purple-500"}
-                  src="images/clients/dfm_logo.svg"
-                  alt=""
-                />
+                <img src="images/clients/dfm_logo.svg" alt="" />
               </div>
             </div>
             <div className={"flex gap-x-3"}>
               <div className={"flex basis-full flex-col gap-y-3"}>
                 <div className={"h-full"} style={{ paddingInline: "5rem" }}>
-                  <img
-                    className={"hover:bg-purple-500"}
-                    src="images/clients/mult_logo.svg"
-                    alt=""
-                  />
+                  <img src="images/clients/mult_logo.svg" alt="" />
                 </div>
                 <div className={"h-full"} style={{ paddingInline: "3rem" }}>
-                  <img
-                    className={"hover:bg-purple-500"}
-                    src="images/clients/station_logo.svg"
-                    alt=""
-                  />
+                  <img src="images/clients/station_logo.svg" alt="" />
                 </div>
               </div>
               <div className={"basis-2/4"}>
-                <img
-                  className={"hover:bg-purple-500"}
-                  src="images/clients/maximum_logo.svg"
-                  alt=""
-                />
+                <img src="images/clients/maximum_logo.svg" alt="" />
               </div>
               <div className={"basis-1/4"} style={{ paddingInline: "2rem" }}>
-                <img
-                  className={"hover:bg-purple-500"}
-                  src="images/clients/ct_logo.svg"
-                  alt=""
-                />
+                <img src="images/clients/ct_logo.svg" alt="" />
               </div>
               <div className={"flex basis-2/4 flex-col gap-3"}>
                 <div className={"h-full"}>
-                  <img
-                    className={"hover:bg-purple-500"}
-                    src="images/clients/nst_logo.svg"
-                    alt=""
-                  />
+                  <img src="images/clients/nst_logo.svg" alt="" />
                 </div>
                 <div className={"h-full"}>
-                  <img
-                    className={"hover:bg-purple-500"}
-                    src="images/clients/domvet_logo.svg"
-                    alt=""
-                  />
+                  <img src="images/clients/domvet_logo.svg" alt="" />
                 </div>
               </div>
             </div>

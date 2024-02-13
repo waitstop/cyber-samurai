@@ -90,14 +90,17 @@ const CasesCarouselMobile = ({
                 <AccordionItem value={`item-${i}`}>
                   <span>{caseItem.tag}</span>
                   <div className={"flex justify-between"}>
-                    <span
-                      className={
-                        "font-druk font-bold uppercase text-purple-500"
-                      }
+                    <AccordionTrigger
+                      headerClassname={"flex w-full justify-between"}
                     >
-                      {caseItem.title}
-                    </span>
-                    <AccordionTrigger />
+                      <span
+                        className={
+                          "cursor-pointer font-druk font-bold uppercase text-purple-500"
+                        }
+                      >
+                        {caseItem.title}
+                      </span>
+                    </AccordionTrigger>
                   </div>
                   <AccordionContent className={"mt-4"}>
                     <h2 className={"mb-2"}>Наши задачи</h2>

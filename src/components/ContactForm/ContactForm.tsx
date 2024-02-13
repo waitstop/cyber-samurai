@@ -153,7 +153,7 @@ const ContactForm = () => {
         </div>
         <img
           className={
-            "absolute -bottom-20 -right-0 block w-28 md:right-0 md:top-0 md:w-64"
+            "absolute -bottom-10 -right-0 block w-28 md:right-0 md:top-0 md:w-64"
           }
           src="images/maskot_1.png"
           alt="maskot"
