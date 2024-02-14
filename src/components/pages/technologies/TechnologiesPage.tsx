@@ -81,11 +81,11 @@ const TechnologiesPage = () => {
             <div>
               <div>
                 <img src="images/tech/laravel.svg" alt="vue" />
-                <span>Vue</span>
+                <span>Laravel</span>
               </div>
               <div>
                 <img src="images/tech/python.svg" alt="vue" />
-                <span>Tailwind</span>
+                <span>Python</span>
               </div>
               <p>Бэкенд</p>
             </div>

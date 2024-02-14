@@ -11,7 +11,6 @@ import {
 import { Input } from "@components/ui/input.tsx";
 import { Textarea } from "@components/ui/textarea.tsx";
 import { Button } from "@components/ui/button.tsx";
-import { Link } from "react-router-dom";
 import { PatternFormat } from "react-number-format";
 import { isValidPhoneNumber } from "libphonenumber-js";
 import emailjs from "@emailjs/browser";
@@ -143,12 +142,12 @@ const ContactForm = () => {
           </Button>
           <p className={"mt-3 w-56 pb-10 text-xs leading-none opacity-50"}>
             Нажимая кнопку вы соглашаетесь на&nbsp;
-            <Link
+            <a
               className={"underline underline-offset-[5px]"}
-              to={"/documents/privacy"}
+              href={"/docs/personal-data.docx"}
             >
               обработку персональных данных
-            </Link>
+            </a>
           </p>
         </div>
         <img
