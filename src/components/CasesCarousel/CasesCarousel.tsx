@@ -95,7 +95,7 @@ const CasesCarouselMobile = ({
                     >
                       <span
                         className={
-                          "cursor-pointer font-druk font-bold uppercase text-purple-500"
+                          "cursor-pointer text-left font-druk font-bold uppercase text-purple-500"
                         }
                       >
                         {caseItem.title}
