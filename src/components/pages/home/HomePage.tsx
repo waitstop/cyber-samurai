@@ -305,7 +305,7 @@ const HomePage = () => {
                     >
                       <span
                         className={
-                          "mb-2 flex justify-between rounded-xl bg-green-700 p-2 py-2 font-extrabold md:bg-transparent md:p-0"
+                          "mb-2 flex justify-between rounded-xl bg-red-800 p-2 font-extrabold md:bg-transparent"
                         }
                       >
                         Решение

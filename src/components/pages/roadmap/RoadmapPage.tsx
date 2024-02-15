@@ -14,7 +14,8 @@ const RoadmapPage = () => {
       </div>
       <div>
         <h1 className={"container mb-5 text-3xl uppercase text-white"}>
-          Дорожная карта
+          Дорожная <br />
+          карта
         </h1>
         <RoadmapSlider />
       </div>
@@ -24,12 +25,12 @@ const RoadmapPage = () => {
         </h1>
         <div
           className={
-            "hide-scrollbar flex items-center justify-between gap-5 overflow-scroll"
+            "hide-scrollbar flex items-center justify-start gap-5 overflow-scroll"
           }
         >
           <Link
             className={
-              "button w-full whitespace-nowrap border-2 border-red-500 text-white"
+              "button w-fit whitespace-nowrap border-2 border-red-500 text-white"
             }
             to={routesPaths.TECHNOLOGIES}
           >
@@ -37,7 +38,7 @@ const RoadmapPage = () => {
           </Link>
           <Link
             className={
-              "button w-full whitespace-nowrap border-2 border-amber-300 text-white"
+              "button w-fit whitespace-nowrap border-2 border-amber-300 text-white"
             }
             to={routesPaths.SOLUTIONS}
           >
