@@ -49,7 +49,7 @@ const RoadmapBg = ({ classname }: Props) => {
           style={lineSpring}
           stroke="#F9FAFB"
           strokeWidth="6.05369"
-          strokeDasharray="12.11 12.11"
+          strokeDasharray="12 12"
         />
         <a.circle
           style={circle2Spring}
