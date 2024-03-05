@@ -21,7 +21,7 @@ const TechnologiesPage = () => {
           alt="cover_1"
         />
         <div>
-          <h1 className={"text-3xl uppercase"}>
+          <h1 className={"mb-5 text-3xl uppercase md:text-6xl"}>
             Про
             <br />
             технологии
@@ -41,7 +41,7 @@ const TechnologiesPage = () => {
           </p>
           <br />
           <p>
-            Живя в данной парадигме и основываясь на нашей экспертизе мы
+            Живя в данной парадигме и основываясь на нашей экспертизе, мы
             осознанно не используем конструкторы и модульные продукты для
             создания сайтов, тем самым избегая постоянной/периодической
             поддержки и обновлений установленных модулей и шаблонов, сохраняя
@@ -125,14 +125,16 @@ const TechnologiesPage = () => {
         </div>
       </section>
       <section className={"container bg-red-500 py-10"}>
-        <h1 className={"font-bold uppercase leading-tight md:text-3xl"}>
+        <h1 className={"font-bold uppercase leading-tight md:text-5xl"}>
           А еще мы собрали&nbsp;
           <span className={"text-black"}>Библиотеку Страданий</span>, в ней вы
           можете найти свою боль и наше решение
         </h1>
         <Link to={routesPaths.PAIN_SOLUTIONS}>
           <img
-            className={"my-5 aspect-video w-full rounded-md object-cover"}
+            className={
+              "my-5 aspect-video w-full rounded-2xl object-cover md:rounded-3xl"
+            }
             src="images/tech/cover_3.png"
             alt="cover_3"
           />

@@ -141,7 +141,7 @@ const ContactForm = () => {
             )}
           </Button>
           <p className={"mt-3 w-56 pb-10 text-xs leading-none opacity-50"}>
-            Нажимая кнопку вы соглашаетесь на&nbsp;
+            Нажимая кнопку, вы соглашаетесь на&nbsp;
             <a
               className={"underline underline-offset-[5px]"}
               href={"/docs/personal-data.docx"}

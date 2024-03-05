@@ -18,13 +18,13 @@ const RoadmapCard = ({
   <div className={"flex flex-col"}>
     <span
       className={
-        "w-fit translate-y-[1px] rounded-t-md bg-white px-2 py-1 font-druk text-xl font-bold"
+        "w-fit translate-y-[1px] rounded-t-md bg-white px-2 py-1 font-druk text-xl font-bold uppercase"
       }
     >
       Этап {index + 1}
     </span>
     <div className={"overflow-hidden rounded-b-md rounded-tr-md bg-white p-3"}>
-      <h1>{title}</h1>
+      <h1 className={"font-inter font-bold"}>{title}</h1>
       <p className={"my-2.5"}>{description}</p>
       <img
         className={"h-auto w-full rounded-md object-cover"}

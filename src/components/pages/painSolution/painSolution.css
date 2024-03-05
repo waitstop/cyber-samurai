@@ -5,3 +5,17 @@
 .pain-solution-swiper .swiper-slide:not(.swiper-slide-visible):not(.swiper-slide-next){
   filter: brightness(0.5);
 }
+.pain-solution_list li {
+  position: relative;
+  padding-left: 1rem;
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0.5rem; left: 0;
+    width: .5rem;
+    height: .5rem;
+    border-radius: 100%;
+    background: currentColor;
+    z-index: 1;
+  }
+}
